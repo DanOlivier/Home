@@ -1,0 +1,30 @@
+doctype 5
+html
+  head
+
+    // Parent style block precedes the statements of those who extend from this
+
+    if env.NODE_ENV == 'development'
+      link(rel='stylesheet', href='/css/bootstrap.css')
+    else
+      link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    
+    link(rel="stylesheet" href="stylesheets/style.css")
+     
+    block style
+  body
+    block content
+
+    // Parent script block precedes the statements of those who extend/derive from this
+    //script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script(src='http://code.jquery.com/jquery-latest.js')    
+    if env.NODE_ENV == 'development'
+      script(src='js/bootstrap.js')
+    else
+      script(src='js/bootstrap.min.js')
+    //script(src="less.js" type="text/javascript")
+
+    block script
+
+    block suffix

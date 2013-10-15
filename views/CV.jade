@@ -1,0 +1,450 @@
+extends layout
+
+append script
+  //script(src='http://cdn.dev.skype.com/uri/skype-uri.js')
+
+append content
+  title Daniel Olivier - Curriculum Vitae
+
+  .container
+    h1 Curriculum Vitae
+    .row#contact-information
+      .col-md-4
+        .panel.panel-primary
+          .panel-heading
+            h2.panel-title Coordonnées :
+          .panel-body
+            table(width="100%")
+              tr: td(colspan=2).name-row Daniel OLIVIER
+              tr: td(colspan=2).title-row Ingénieur d’Étude et Développement Sénior
+              tr: td(colspan=2): hr
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-home
+                td Montréal, QC
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-envelope
+                td: a(href="mailto:dan_olivier@hotmail.com")  dan_olivier@hotmail.com
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-envelope
+                td: a(href="mailto:daniel.g.olivier@gmail.com")  daniel.g.olivier@gmail.com
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-phone
+                td  +1-514-415-8595
+              tr: td(colspan=2): hr
+              tr: td(colspan=2)
+                div
+                  a.btn(href="http://twitter.com/idkez")
+                    i.icon-twitter.icon-2x
+                  a.btn(href="http://ca.linkedin.com/pub/dan-olivier/0/4b/40b/")
+                    i.icon-linkedin.icon-2x
+                  //a.btn(href="http://www.facebook.com/daniel.olivier.526")
+                    i.icon-facebook.icon-2x
+                  a.btn(href="http://plus.google.com/107802116544821211236?prsrc=3" rel="publisher")
+                    i.icon-google-plus.icon-2x
+                  a.btn(href="http://github.com/DanOlivier")
+                    i.icon-github.icon-2x
+                  a.btn(href="skype:daniel.g.olivier?call&video=true")
+                    i.icon-skype.icon-2x
+          //.panel-footer
+
+    .row
+      h2 Niveaux d’intervention :
+      .col-md-6
+        table.table
+          tbody
+            tr
+                td Analyse, conception et développement (C++, OOP)
+            tr
+                td Support aux utilisateurs
+            tr
+                td Grid computing, interopérabilité, optimisation
+
+    .row
+      h2 Compétences techniques :
+      .col-md-8
+        table.table.align-right
+          tbody
+            tr
+              td Systèmes, plateformes :
+              td
+                p Windows (3.1, NT, 2000, XP, Vista, 7), cygwin
+                p Linux (CentOS, Ubuntu, Red Hat, Fedora, Solaris)
+                p Divers systèmes propriétaire/embarqué
+            tr
+              td Langages :
+              td
+                p.indent-second
+                  strong OOP : 
+                  |  C/C++, C#.NET, Delphi, Java
+                p.indent-second
+                  strong scripting, CLI : 
+                  |  Bash, Python, Perl, Lua, Powershell, SQL
+                p.indent-second
+                  strong assembleur : 
+                  |  x86, M68K
+            tr
+              td Librairies C++ :
+              td
+                p.indent-second
+                  strong Général : 
+                  |  STL, Boost, template, Win32, pthreads, Rogue Wave
+                p.indent-second
+                  strong IHM : 
+                  |  MFC, WxWidgets, Qt, Ilog
+                p.indent-second
+                  strong Comm : 
+                  a(href="http://code.google.com/p/protobuf/") Protobuf
+                  |, 
+                  a(href="http://www.cs.wustl.edu/~schmidt/ACE.html") Ace/Tao/Corba
+                  |, 
+                  a(href="http://www.boost.org/") Boost 
+                  | (Sérialisation, ASIO)
+                p.indent-second
+                  strong Graphism : 
+                  a(href="http://www.opengl.org") OpenGL, 
+                  a(href="http://www.openscenegraph.org") OSG (Open Scene Graph)
+                  |, 
+                  a(href="http://www.presagis.com/products_services/products/modeling-simulation/visualization/vega_prime/") VegaPrime
+                  |  + 
+                  a(href="http://www.presagis.com/products_services/products/modeling-simulation/content_creation/creator/") Creator
+                  | (
+                  a(href="http://www.presagis.com/") Multigen/Presagis
+                  |), 
+                  a(href="http://www.vtk.org") VTK
+                p.indent-second
+                  strong Autres :
+                  |  OpenAL (audio)
+            tr
+              td Bases de données :
+              td Oracle (SQL Developer), Sybase, Toad
+            tr
+              td Méthodologies :
+              td UML, Rational Rose, Design Patterns
+            tr
+              td Outils :
+              td Visual Studio, Eclipse (Java, CDT), NetBeans, Qt Creator
+                p.indent-second Autres: Debugging Tools for Windows, gdb, Purify, Quantify, BoundsChecker, VTune, valgrind
+            tr
+              td Gestion de configuration :
+              td
+                p git, CVS, SVN, Clearcase, Clearquest
+                p make (gmake, cmake, nmake, vcbuild, scons, bjam, gyp)
+                p TeamCity, github
+
+    .row
+      h2 Formation :
+      .col-md-8
+        table.table.align-right
+          tbody
+            tr
+              td 1989 - 1993
+              td
+                p: span.company-name: a(href="http://www.polymtl.ca") École Polytechnique de Montréal
+                p Diplôme d'Ingénieur en Informatique, spécialisation logiciels
+
+    .row
+      h2 Expériences Professionnelles :
+      table.table.align-right
+        thead
+          tr
+            th.col-md-3 Dates, Employeur, Titre
+            th.col-md-9 Description des tâches, environment de travail
+        tbody
+          tr
+            td
+              p De juillet 2011 à décembre 2012 
+                span.time-duration (18 mois) :
+              p: span.company-name: a(href="http://www.sgcib.com/‎") SGCIB (Société Générale, Corporate Investment Bank)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Paris, France
+              p: span.title Ingénieur Étude et développement C++
+            td
+              p Développement et optimisation en C++ d’une application distribuée d’analyse et de calcul de risque à destination des dérivés de taux
+              ul
+                li Évolution du mode de caching des données (Market/Static data):
+                ul
+                  li Intégration de nouvelles structures/nouveaux champs au schéma du cache
+                  li Évolution et optimisation de la gestion de la configuration
+                  li Modification de l’interface de Gigaspace en Java, C# et C++ pour assurer la rétrocompatibilité
+                  li Recompilation du module d’accès C++ de Gigaspace en mode débug
+                  li Déploiement d’un CacheProxy sur chaque nœud de la grille
+                  li Debug en production (remote desktop sur grille de calcul, et/ou remote debug)
+                  li Saisie et analyse de dumps mémoire et rapports de crash
+                  li Étude des mécanismes de surveillance/gestion de la grille, d’outils de calcul distribués (Symphony, sites web internes)
+                  li Support aux développeurs
+
+                li Développement d’un LoadService en C++ :
+                ul
+                  li Développement d’un module générique d’accès au LoadService pour cacher les détails du code protobuf
+                  li Recensement des appels à la BD cible
+                  li Conversion des appels à la nouvelle interface C++
+                  li Optimisation des connexions
+                  li Adaptation du LoadService auprès d’une seconde BD cible
+                  li Développement de nouvelles fonctionnalités en C++ (extension du système de types, …)
+                  li Migration des requêtes SQL vers des procédures stockées côté-base
+                  li Refactoring de code
+                  li Traitement des anomalies
+                  li Définition de rapports d’exécution via Boost Serialisation
+                  li Réconciliation des divergences des résultats par rapport à la version de référence
+                  li Réalisation de tests (unitaires/ performance)
+                  li Support aux développeurs
+                  li Charge sur la BD divisée par 5 ; suppression de 130 KLOC (sur un total de 1.5 MLOC)
+              hr
+              p: em Environnement technique :
+              ul
+                li C++ (VS 2008, 2010), C++/CLI, C# .Net, Java
+                li Boost, Rogue Wave, Xerces XML, OCI (Oracle Call Interface) + OCCI, Google Protobuf, Log4Net, JNI
+                li
+                  a(href="http://www.doxygen.org") DOxygen
+                  |, 
+                  a(href="http://git-scm.com") Git
+                  |, 
+                  a(href="http://www.platform.com/Products/platform-symphony") Symphony
+                  |, 
+                  a(href="http://www.gigaspaces.com/") Gigaspaces
+
+          tr
+            td
+              p De février 2010 à mars 2011 
+                span.time-duration (1 an et 1 mois) :
+              p: span.company-name IFCS (SSII canadienne)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Paris, France
+              p: span.title Ingénieur Étude et développement C++
+            td
+              h5 Projet 
+                span.company-name
+                  a(href="http://www.tech-advantage.com/‎") Tech'Advantage
+                  |, filiale de l'
+                  a(href="http://www.ifp-school.com/") IFP (Institut Français du Pétrole)
+                |  :
+              p Développement et optimisation (structure applicative et IHM) d'un logiciel d'inversion sismique (modélisation lithosphérique)
+              p
+                em Environnement technique :
+                |  Linux (RH9, EL5), C++ (Eclipse + CDT), Ilog Views + librairies internes
+              hr
+              h5 Projet 
+                span.company-name: a(href="http://www.carestreamdental.com/") Trophy
+                |  :
+              p Développement et optimisation d’une application en visualisation d’imagerie médicale (dentaire)
+              p
+                em Environnement technique :
+                |  Visual C++, wxWidgets, VTK (moteur graphique)
+
+          tr
+            td
+              p De septembre 2004 à août 2009 
+                span.time-duration (5 ans) :
+              p: span.company-name: a(href="http://www.vxsim.com") CMLabs
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montréal, QC
+              p: span.title Ingénieur Études et Développement senior C++
+
+            td
+              p Étude, développement et optimisation de la librairie Vortex – SDK en C++ permettant d’effectuer des simulations physiques (mécaniques) complexes
+              ul
+                li Développement du moteur de simulation (C++, STL) et élaboration des scénarios de simulation
+                  ul
+                    li Ajout de nouveaux types d’équipement
+                    li Optimisation du multithreading
+                    li Développement des librairies de capteurs artificiels
+                      ul
+                        li Refactoring des modules existants
+                        li Définition d’une nouvelle architecture
+                        li Développement en C++ d’un sonar et d’une depth camera
+                    li Utilisation de Boost (serialization) pour introduire la notion de persistance
+                    li Utilisation des design patterns pour étendre les fonctionnalités de la librairie
+                    li Optimisation des moteurs graphiques via les librairies OSG et VegaPrime
+                      ul
+                        li Amélioration de la qualité du rendu graphique
+                        li Composition de scènes de simulation
+                li Développement de prototypes de simulateurs de grues
+                  ul
+                    li Élaboration des scénarios de simulation et paramétrage des équipements
+                    li Implémentation couche réseautage (via mémoire partagée
+                      a(href="http://diverse.sourceforge.net/diverse/") DTK
+                      |), permettant de distribuer la charge de calcul du simulateur
+                    li Conception d'IHMs (WxWidgets, Qt)
+                    li Ajout d’un module d’interfaçage de périphérique (
+                      a(href="http://www.ni.com/data-acquisition/") NI-DAQ
+                      |), head-tracker (
+                      a(href="http://www.ascension-tech.com/realtime/rtflockofbirds.php") Flock of Birds
+                      |)
+                li Responsable de la gestion de configuration
+                  ul
+                    li Gestion des codes sources
+                    li Maintenance des scripts (multi-plateforme) d’automatisation et d'intégration
+                    li Support technique
+              hr
+              p: em Environnement technique :
+              |  C++, Linux, Windows, cygwin, Qt, wxWidgets, Lua, tolua++
+
+          tr
+            td
+              p De juin 2003 à novembre 2003 
+                span.time-duration (5 mois) :
+              p
+                span.company-name TimeSpring Software
+                | (aujourd'hui  
+                a(href="http://www.visionsolutions.com/") DoubleTake
+                |)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montréal, QC
+              p: span.title Ingénieur Étude et développement senior C++
+            td
+              p Conception et développement d’une application de backup incrémental
+              ul
+                li Amélioration du module d’installation et de déploiement
+                li Optimisation de scripts de construction (Perl, VBScript)
+                li Incorporation de nouveaux outils de débugage (Quantify et Purify)
+              hr
+              p: em Environnement technique :
+              |  C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs), 
+              C#, DotNet, XML, XSLT, HTML, CVS, DDK, SoftICE
+
+          tr
+            td
+              p D’avril 2002 à avril 2003 
+                span.time-duration (1 an)
+              p: span.company-name VisualMED
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montréal, QC
+              p: span.title Ingénieur Étude et développement C/C++
+            td
+              p Études et développement d’un logiciel de gestion des soins et médicaments (contre-indication)
+              ul
+                li Gestion des procédures de construction (configuration et déploiement)
+                li Tests d’intégration et régression
+                li Étude et développement d’une passerelle Citrix (C++) pour authentification via un scanner d’empreintes digitales
+                li Support au développement
+              hr
+              p: em Environnement technique :
+              |  Delphi v6 + VCL, C/C++ (VC7), COM+, Oracle + Toad, Wise, Express QuantumGrid
+
+          tr
+            td
+              p D’août 2000 à juillet 2001 
+                .time-duration (1 an)
+              p: span.company-name
+                a(href="http://www.ibm.com/software/products/us/en/ratirosefami") Rational Software (Rose Business Unit)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Redmond, WA (USA)
+              p: span.title Ingénieur Étude et développement
+            td
+              p Études et développement d’outils visuels de conception logicielle (UML)
+              ul
+                li Optimisation des scripts du build et des tests d’intégration
+                li Analyses de performance
+                li Contrôle des versions et gestion des anomalies
+                li Support aux usagers internes (développeurs)
+                li Documentation technique (APIs internes)
+              hr
+              p: em Environnement technique :
+              |  Rose, UML, XDE, ClearCase, ClearQuest,
+              p MSDev 6, Visual Studio 7, VB, COM (MIDL), Perl (ActiveState), Websphere Studio, Visual J++, Jbuilder, JSDK, JIntegra, cygwin
+
+          tr
+            td
+              p De juillet 1999 à juin 2000 
+                span.time-duration (1 an) :
+              p: span.company-name: a(href="http://www.microsoft.com") Microsoft
+              p
+                span.icon-map-marker.icon-large
+                span.location  Redmond, WA (USA)
+              p: span.title Ingénieur support
+            td
+              ul
+                li Identification et correction des problèmes de compatibilité
+                li Documentation technique des stratégies d’interception d’appels
+                li PSS : Support aux développeurs Kernel/Base (catégories d’interfaces Win32)
+              hr
+              p: em Environnement technique :
+              |  VC6, Windbg, cdb, ntsd, kd, Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking), VC6, Win32, Platform SDK
+
+          tr
+            td
+              p De mars 1997 à juin 1999 
+                span.time-duration (2 ans et 3 mois) :
+              p: span.company-name: a(href="http://www.srtelecom.com") SR Telecom
+              p
+                span.icon-map-marker.icon-large
+                span.location  Ville Saint-Laurent, QC
+              p: span.title Ingénieur Étude et développement C++
+            td
+              ul
+                li Conception d’une plateforme de télécommunications
+                li Conception et réalisation d’un système de gestion de réseaux en C++
+                li Optimisation du serveur de communications
+                li Amélioration du sous-système de communication du SR-500 (doté d'un système d’exploitation embarqué et propriétaire)
+                li Développement d’un panneau de contrôle en C++/MFC
+                li Réalisation des tests du client (sous-système de distribution)
+              hr
+              p: em Environnement technique :
+              |  Visual C++, Win32, MFC, STL, Corba, ACE, OOP, design patterns, Borland C++, Checkmate ICE, UART, TMN, JIDM
+
+          tr
+            td
+              p De juillet 1996 à février 1997 
+                span.time-duration (8 mois) :
+              p: span.company-name Lanser Technologies
+              p
+                span.icon-map-marker.icon-large
+                span.location  Westmount, QC
+              p: span.title Ingénieur Étude et développement C++
+            td
+              p Optimisation d’un logiciel de conversion de protocoles de gestion de réseaux de communication (passerelle logicielle, proxy agent)
+              hr
+              p: em Environnement technique :
+              |  C/C++, Sun/Solaris, Sparcworks, Sun Net Manager
+
+          tr
+            td
+              p De novembre 1993 à juillet 1996 
+                span.time-duration (2 ans et 8 mois)
+              p: span.company-name: a(href="http://www.nbstech.com/") NBS Technologies
+              p
+                span.icon-map-marker.icon-large
+                span.location  Ville Mont-Royal, QC
+              p: span.title Ingénieur Étude et Développement C/C++
+            td
+              p Développement de terminaux de points de vente, systèmes embarqués
+              ul
+                li Conception et réalisation d’un réseau maître/esclave en C
+                li Développement d’un système de gestion de réseau de terminaux en C++
+                li Maintenance du système de gestion de première génération
+                li Évaluation de librairies de développement graphique multi-plate-forme
+                li Conception et réalisation d’une librairie de classes (OOP) pour les communications client/serveur
+                li Transfert du système d’exploitation et des applications
+              hr
+              p: em Environnement technique :
+              |  C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
+
+          tr
+            td
+              p Stage d'été, 1992 
+                span.time-duration (4 mois) : 
+              p: span.company-name: a(href="http://www.kinesio.umontreal.ca/autres_pages/st_justine.htm‎") Hôpital Sainte-Justine, Laboratoire d’Étude du Mouvement
+              p: span.company-business (kinésiologie)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montréal, QC
+              p: span.title Dévelopeur-apprenti C
+            td
+              p Conception, réalisation et optimisation d’un programme de visualisation 3-D de la colonne vertébrale en mouvement
+              hr
+              p: em Environnement technique :
+              |  C, Xlib, SUN, XWindows
+
+    .row
+      h2 Références :
+      p Disponibles sur demande

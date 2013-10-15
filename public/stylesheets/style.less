@@ -1,0 +1,95 @@
+// Order is more general at the top towards more specific
+
+// Debugging layout ===========================================================
+[class*="col-"] {
+  //background-color: rgba(86,61,124,.15);
+  //border: 1px solid rgba(86,61,124,.2);
+}
+
+table td, table tr,
+.container {
+  //border: 1px solid rgba(30,120,120,.3);
+}
+
+.row { 
+  //background-color: #aaa;
+}
+
+// May be overridden 
+//-----------------------------------------------------------------------------
+
+//a:link { text-decoration: underline; }
+
+hr {
+  //border: 1px solid black;
+  border-color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+// Contact panel
+.name-row, 
+.title-row { 
+  font-size: larger; 
+  //font-weight : bold;
+  //color: blue;
+}
+.name-row { font-weight : bold; }
+
+.panel[class*="col-"] {
+  padding-left: 0; padding-right: 0;
+  //margin-bottom: 0px;
+}
+
+// Tables ---------------------------------------------------------------------
+.row:not(#contact-information) { 
+  border-top: 2px solid black;
+
+  table td, 
+  table th,
+  {
+    border: 1px solid rgba(30,120,120,.3);
+  }
+
+  table tr { border-top: 2px solid black; } 
+  table th { border-bottom: 2px solid black; }
+}
+
+td.btn + td {
+  display:inline-block;
+}
+
+// Align 1st column to the right
+.align-right {
+  thead th { 
+    font-size: larger; 
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  tr > th:first-child { 
+    text-align: right; 
+  }
+  tr > td:first-child { 
+    text-align: right; 
+    //color:red; 
+    font-size: larger; 
+  }
+}
+
+.indent-second {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+// Specific fields ------------------------------------------------------------
+.glyphicon-2x {
+    font-size: 16px;
+}
+.company-name { font-size: larger; font-weight: bold; }
+//.location { color: DarkGreen; }
+.time-duration { white-space: nowrap; }
+
+h1, h2 {
+  margin-top: 5px;  
+}

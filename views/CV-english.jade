@@ -1,0 +1,467 @@
+extends layout
+
+append script
+  //script(src='http://cdn.dev.skype.com/uri/skype-uri.js')
+
+append content
+  title Daniel Olivier - Curriculum Vitae
+
+  .container
+    h1 Curriculum Vitae
+    .row#contact-information
+      .col-md-4
+        .panel.panel-primary
+          .panel-heading
+            h2.panel-title Contact Information
+          .panel-body
+            table(width="100%")
+              tr: td(colspan=2).name-row Daniel OLIVIER
+              tr: td(colspan=2).title-row Senior Software Developer
+              tr: td(colspan=2): hr
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-home
+                td Montreal, QC
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-envelope
+                td: a(href="mailto:dan_olivier@hotmail.com")  dan_olivier@hotmail.com
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-envelope
+                td: a(href="mailto:daniel.g.olivier@gmail.com")  daniel.g.olivier@gmail.com
+              tr
+                td.btn
+                  .glyphicon.glyphicon-2x.glyphicon-phone
+                td  +1-514-415-8595
+              tr: td(colspan=2): hr
+              tr: td(colspan=2)
+                div
+                  a.btn(href="http://twitter.com/idkez")
+                    i.icon-twitter.icon-2x
+                  a.btn(href="http://ca.linkedin.com/pub/dan-olivier/0/4b/40b/")
+                    i.icon-linkedin.icon-2x
+                  //a.btn(href="http://www.facebook.com/daniel.olivier.526")
+                    i.icon-facebook.icon-2x
+                  a.btn(href="http://plus.google.com/107802116544821211236?prsrc=3" rel="publisher")
+                    i.icon-google-plus.icon-2x
+                  a.btn(href="http://github.com/DanOlivier")
+                    i.icon-github.icon-2x
+                  a.btn(href="skype:daniel.g.olivier?call&video=true")
+                    i.icon-skype.icon-2x
+          //.panel-footer
+
+    .row
+      h2 Primary activities
+      .col-md-6
+        table.table
+          tbody
+            tr
+              td Analysis, design and development (C++, OOP)
+            tr
+              td Developer support and technical advisory roles
+            tr
+              td Grid computing, interoperability, optimisation
+
+    .row
+      h2 Technical skills
+      .col-md-8
+        table.table.align-right
+          tbody
+            tr
+              td Systems, platforms:
+              td
+                p Windows (3.1, NT, 2000, XP, Vista, 7), cygwin
+                p Linux (CentOS, Ubuntu, Red Hat, Fedora, Solaris)
+                p Various custom/proprietary, embedded systems
+            tr
+              td Langages:
+              td
+                p.indent-second
+                  strong OOP: 
+                  |  C/C++, C#.NET, Delphi, Java
+                p.indent-second
+                  strong scripting, CLI: 
+                  |  Bash, Python, Perl, Lua, Power Shell, SQL
+                p.indent-second
+                  strong assembler: 
+                  |  x86, M68K
+            tr
+              td C++ libraries:
+              td
+                p.indent-second
+                  strong General: 
+                  |  STL, Boost, template, Win32, pthreads, Rogue Wave
+                p.indent-second
+                  strong GUI: 
+                  |  MFC, WxWidgets, Qt, Ilog
+                p.indent-second
+                  strong Comm : 
+                  a(href="http://code.google.com/p/protobuf/") Protobuf
+                  |, 
+                  a(href="http://www.cs.wustl.edu/~schmidt/ACE.html") Ace/Tao/Corba
+                  |, 
+                  a(href="http://www.boost.org/") Boost 
+                  |  (Serialisation, ASIO)
+                p.indent-second
+                  strong Graphics: 
+                  a(href="http://www.opengl.org") OpenGL, 
+                  a(href="http://www.openscenegraph.org") OSG (Open Scene Graph)
+                  |, 
+                  a(href="http://www.presagis.com/products_services/products/modeling-simulation/visualization/vega_prime/") VegaPrime
+                  |  + 
+                  a(href="http://www.presagis.com/products_services/products/modeling-simulation/content_creation/creator/") Creator
+                  |  (
+                  a(href="http://www.presagis.com/") Multigen/Presagis
+                  |), 
+                  a(href="http://www.vtk.org") VTK
+                p.indent-second
+                  strong Others:
+                  |  OpenAL (audio)
+            tr
+              td Databases:
+              td Oracle (SQL Developer), Sybase, Toad
+            tr
+              td Methods:
+              td UML, Rational Rose, Design Patterns
+            tr
+              td Tools:
+              td Visual Studio, Eclipse (Java, CDT), NetBeans, Qt Creator
+                p.indent-second Others: Debugging Tools for Windows, gdb, Purify, Quantify, BoundsChecker, VTune, valgrind
+            tr
+              td Configuration management:
+              td
+                p git, CVS, SVN, Clearcase, Clearquest
+                p make (gmake, cmake, nmake, vcbuild, scons, bjam, gyp),
+                p TeamCity, github
+
+    .row
+      h2 Education
+      .col-md-8
+        table.table.align-right
+          tbody
+            tr
+              td 1989 - 1993
+              td
+                p: span.company-name: a(href="http://www.polymtl.ca") École Polytechnique de Montreal
+                p Computer Engineering, major in software systems
+
+    .row
+      h2 Work Experience - Employment History
+      table.table.align-right
+        thead
+          tr.heading
+            th.col-md-3 Dates, Employer, Job title
+            th.col-md-9 Job description, accomplishments, work environment
+        tbody
+          tr
+            td
+              p From July 2011 to December 2012 
+                span.time-duration (18 months)
+              p: span.company-name: a(href="http://www.sgcib.com/‎") SGCIB (Société Générale, Corporate Investment Bank)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Paris, France
+              p: span.title Ingénieur Étude et développement C++
+            td
+              p Development, maintenance, optimization and support of the primary risk analysis application covering derivative financial products
+              ul
+                li Maintenance and development of the (Gigaspace) cache support system (market data + static data) :
+                ul
+                  li Incorporation of new fields and structures into cache schema, and supporting changes in the code (C++, Java, C#), ensuring backwards and forward compatibility
+                  li Maintenance and evolution of the changes to configuration management.
+                  |  i.e. compile Gigaspace in debug mode, allowing for the deployment into the developer environment (and ensuring symmetry between developer, testing and production environments)
+                  li Deployment of cache proxy onto testing and development compute grids
+                  li Production debugging (remote desktop, remote debug, WMI, Powershell) + crash dump capture and analysis
+                  li Study and use of surveillance applications, grid management, and distributed computation frameworks (internal and OTS)
+                  li Assessment of feasibility of cache invalidation notifications (emanating from a DB service)
+                  li Developer support
+
+                li Development of a C++ LoadService (specialized DB front-end service) :
+                ul
+                  li Development of a generic “access module” (to hide the details of our use of Google protobuf packets and library)
+                  li Census of all target database (common market and static data) entry points and conversion to new LoadService interface
+                  li Connection management and optimization (socket lifecycle)
+                  li Adaptation of LoadService to a second target DB, and extending the flexibility of the protocol and the supported types (i.e. input vectors)
+                  li Migration of hardcoded SQL queries to stored procedures
+                  li Massive legacy code refactoring. Suppression of 150 KLOC (over 1.5 MLOC initial)
+                  li Support, diagnoses, bug management
+                  li Validation of results (DB queries) through instrumentation of access functions (and use of Boost serialization to produce reports)
+                  li Reconciliation of divergent reports
+                  li Unit and performance tests
+                  li Developer support
+                  li Results : impact on database divided by 5
+              hr
+              p: em Technical environment:
+              ul
+                li C++ (VS 2008, 2010), C++/CLI, C# .Net, Java
+                li Boost, Rogue Wave, Xerces XML, OCI (Oracle Call Interface) + OCCI, Google Protobuf, Log4Net, JNI
+                li
+                  a(href="http://www.doxygen.org") DOxygen
+                  |, 
+                  a(href="http://git-scm.com") Git
+                  |, 
+                  a(href="http://www.platform.com/Products/platform-symphony") Symphony
+                  |, 
+                  a(href="http://www.gigaspaces.com/") Gigaspaces
+
+          tr
+            td
+              p February 2010 – March 2011 
+                span.time-duration (1 year 1 month)
+              p: span.company-name IFCS
+              p
+                span.icon-map-marker.icon-large
+                span.location  Paris, France
+              p: span.title C++ consultant
+            td
+              h5
+                span.company-name
+                  a(href="http://www.tech-advantage.com/‎") Tech'Advantage
+                  |, subsidiary of the 
+                  a(href="http://www.ifp-school.com/") IFP (Institut Français du Pétrole)
+                |  project:
+              p maintenance and development (internal structure and GUI) of a legacy lithospheric modeling framework and application suite (sub-surface 3D cartography for petroleum and mining applications)
+              p
+                em Technical environment:
+                |  Linux (RH9, EL5), C++ (Eclipse + CDT), Ilog Views + internal libraries
+              hr
+              h5
+                span.company-name: a(href="http://www.carestreamdental.com/") Trophy
+                |  project:
+              p Development and optimization of a dental imagery visualization application
+              p
+                em Technical environment:
+                |  Visual C++, wxWidgets, VTK (graphics engine)
+
+          tr
+            td
+              p September 2004 - August 2009 
+                span.time-duration (5 years)
+              p: span.company-name: a(href="http://www.vxsim.com") CMLabs
+              p: span.company-business Physics middleware (Vortex C++ SDK), robotics, mecanical simulation, serious games
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montreal, QC
+              p: span.title Senior Software Developer C++, build automation + release engineer
+
+            td
+              p The Vortex C++ SDK is a software library intended for mechanical simulation and is subdivided into the following categories or problems domains:
+              ul
+                li physics: collision detection (volumes, contacts), dynamics (friction, constraints, control, motors),
+                li graphics and visualization, animation, special effects,
+                li vehicles (wheeled, tracked), including the complete modeling of suspension, transmission, differentials, wheel traction, etc.
+                li articulated robots (undersea, de-mining),
+                li particle systems, fluids, cables,
+                li simulated sensors (i.e. depth camera, sonar), ray-casting, graphical display
+                li 3rd party integrations:
+                ul
+                  li Vortex for VegaPrime (Multigen/Presagis), LynxPrime integration module (vpVx, vpVxVehicle)
+                  li OpenSceneGraph, OpenGL
+                  li Virtools, etc.
+                li Support modules: i.e. persistence, data-flow programming, encryption/decryption of resources
+
+              p Developed and maintained the Vortex library and supporting framework:
+              ul
+                li entire development life-cycle : analysis, architecture, development, re-factoring, debugging, and support (internal or external/client)
+                li bug tracking and resolution, performance,
+                li developed and enhanced SDK samples/tutorials (all categories), user documentation
+                li persistence + physics file format (using Boost)
+
+              p Crane simulator prototypes (mobile, tower), software development, initial productization and support:
+              ul
+                li graphics (tuning, debugging, frame rate, shadows),
+                li networking (DTK, Ace/TAO), GUI (wxWidgets, Qt), sound (OpenAL)
+                li physics parameterization and scripting (core),
+                li head-tracker (Ascension),
+                li devices and controls (National Instruments, NI-DAQmx C APIs),
+                li scripting (Lua + tolua++),
+                li simulator configuration, scenario development,
+                li integration issues
+                li build system/process, construction, scripts, installation/deployment,
+                li hardware inventory, assembly, machine installation/management,
+                li on-site field support
+
+              p Maintain and extend the build system, which includes:
+              ul
+                li configuration management, source control
+                li makefiles, scripting, native projects, build matrix, packaging, deployment
+                li multi-platform (Linux, Windows)
+                li QA, runtime issues, licensing (FlexLM), developer support (internal, external), deployment and installation
+                li testing and support of 3rd party integration modules
+                li planning and evolution
+
+              p Special tasks:
+              ul
+                li DRDC project (Gaming Tools and Serious Games survey)
+
+          tr
+            td
+              p June 2003 - November 2003 
+                span.time-duration (6 months)
+              p
+                span.company-name TimeSpring Software
+                | (now  
+                a(href="http://www.visionsolutions.com/") DoubleTake
+                |)
+              p: span.company-business (Storage management, backup, file-system drivers, continuous data protection)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montreal, QC
+              p: span.title Senior C++ Developer, build support
+            td
+              p Development of an incremental and continuous backup application.
+              ul
+                li Deployment maintenance (InstallShield, MSI)
+                li Build script maintenance (make, bash, perl, VBScript, C#, NAnt)
+                li Reporting (C#, DotNet, XML, XSLT, HTML, CVS)
+                li Incorporation of new tools to build process (ex. Purify, Quantify)
+                li Installation/deployment module (SCM, C++)
+              hr
+              p: em Technical environment:
+              |  C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs)
+              p File-system drivers: DDK, SoftICE
+
+          tr
+            td
+              p April 2002 - April 2003 
+                span.time-duration (1 year)
+              p: span.company-name VisualMED
+              p: span.company-business (Healthcare management software)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montreal, QC
+              p: span.title Developer, dev support
+            td
+              ul
+                li Development, developer support, configuration management
+                li Analysis and debugging, developer support (30+ developers), software build procedure (including deployment), integration and regression testing
+                li Special projects:
+                ul 
+                  li Translation management infrastructure (studio and runtime)
+                  li Citrix compatibility with fingerprint scanning peripheral device (virtual channel driver)
+              hr
+              p: em Technical environment:
+              |  Delphi v6, COM+, Oracle, Toad, VC7, Wise, Express QuantumGrid
+
+          tr
+            td
+              p August 2000 - July 2001 
+                span.time-duration (1 year)
+              p: span.company-name: a(href="http://www.ibm.com/software/products/us/en/ratirosefami") Rational Software (Rose Business Unit)
+              p: span.company-business (Visual software modeling and design tools)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Redmond, WA (USA)
+            td
+              ul
+                li Build script and integration test maintenance
+                li Integration testing, oversight, reporting
+                li Version control, bug and feature management, distribution, user support
+                li Technical documentation (internal APIs)
+                li Performance analysis
+              hr
+              p: em Technical environment:
+              |  Rose, UML, XDE, ClearCase, ClearQuest
+              p MSDev 6, Visual Studio 7, VB, COM (MIDL), Perl (ActiveState), Websphere Studio, Visual J++, Jbuilder, JSDK, JIntegra, cygwin
+
+          tr
+            td
+              p July 1999 - July 2000 
+                span.time-duration (1 year)
+              p: span.company-name: a(href="http://www.microsoft.com") Microsoft (Application Compatibility)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Redmond, WA (USA)
+              p: span.title Software Design Engineer (SDE)
+            td
+              ul
+                li Developer support (bug-tracking)
+                li Identify and correct applications with compatibility issues
+                li Analysis, diagnosis, triage and dispatch of compatibility bugs
+                li Performance analysis and documentation of API interception strategies in Win2K
+                li Exploratory testing of selected target applications
+                li Kernel/Base (Win32 API category) developer support
+              hr
+              p: em Technical environment
+              |  Debuggers: VC6, Windbg (cdb, ntsd, kd), Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking)
+              p Full range of Microsoft development tools: VC6, VC7, Win32, Platform SDK, RAID (bug management), SourceDepot (source code control), build process
+
+          tr
+            td
+              p March 1997 - June 1999 
+                span.time-duration (2 years 3 months)
+              p: span.company-name: a(href="http://www.srtelecom.com") SR Telecom
+              p: span.company-business (Fixed-point telecommunications)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Ville St-Laurent, QC
+              p: span.title C++ Developer
+            td
+              ul
+                li Design and implementation of a network management system
+                li PC Workstation environment (Visual C++, Win32, MFC, STL, Corba, ACE,OOP, patterns)
+                li Design, development and unit testing of client (marshaling, distributed networking)
+                li Maintenance of communication server (bridge)
+                li Evaluation of development tools and operating environments
+                li Research into ITU network management standards and distributed systems (TMN, CORBA, JIDM)
+                li Maintenance/development of the communication sub-system of the SR-500 system (custom embedded OS) : Borland C++ tools, Checkmate ICE, UART
+                li Technical lead for control panel (Compact Central Station) : Microchip PIC processor supported by simple C++/MFC application
+
+          tr
+            td
+              p July 1996 - February 1997 
+                span.time-duration (8 months)
+              p: span.company-name Lanser Technologies
+              p
+                span.icon-map-marker.icon-large
+                span.location  Westmount, QC
+            td
+              p Narrowband wireless local loop bypass network (POS transactions, automated meter reading, alarm systems, etc.)
+              p Software maintenance and testing of network management protocol conversion application (proxy agent)
+              hr
+              p: em Technical environment:
+              |  C/C++, QNX, Solaris, Sparcworks, SunNet Manager
+
+          tr
+            td
+              p November 1993 - July 1996 
+                span.time-duration (2 years 8 months)
+              p: span.company-name: a(href="http://www.nbstech.com/") NBS Technologies
+              p: span.company-business Point of Sale (POS) Terminals
+              p
+                span.icon-map-marker.icon-large
+                span.location  Town of Mont-Royal, QC
+              p: span.title Embedded Systems Software Developer
+            td
+              p Develop, support and maintain embedded software for POS Terminals
+              ul
+                li Port the proprietary OS and (client) applications from an 80x86 platform to a 68000 platform (C, 68K asm, MC68302, 80x86 asm, Microtec tools, XRAY debugger)
+                li Design and implementation of master-slave network (BASE-32 financial protocol)
+                li Design and implementation of a network management system (Windows NT, VC++ v2.0, MFC, IPX/SPX)
+                li Maintenance of a 1st generation management system
+                li Evaluation of multi-platform GUI development tools (zApp, XVT, MFC, OWL, …)
+                li Design and implementation of a class library (OOP) for client/server communications
+              hr
+              p: em Technical environment:
+              |  C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
+
+          tr
+            td
+              p Summer 1992
+              p: span.company-name
+                  a(href="http://www.kinesio.umontreal.ca/autres_pages/st_justine.htm‎") Hôpital Sainte-Justine, Laboratoire d’Étude du Mouvement
+              p: span.company-business (Kinesiology, gait analysis, prosthetics)
+              p
+                span.icon-map-marker.icon-large
+                span.location  Montreal, QC
+              p: span.title Student programmer
+            td
+              p Design, implementation and optimization of a program to visualize the 3-D rendering of the human spine in motion
+              hr
+              p: em Technical environment:
+              |  C, Xlib, Sun workstations, XWindows
+
+    .row
+      h2 References
+      p Available upon request
