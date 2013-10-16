@@ -50,7 +50,7 @@ app.get('/', function(req, res){
 app.get(/\/.*/, function(req, res, next) { 
   //debugger;
   var file = path.join(path.join(__dirname, 'views'), req.url);
-  res.render(file, { NODE_ENV: process.env.NODE_ENV, env: process.env } );
+  res.render(file, { env: process.env } );
 });
 
 http.createServer(app).listen(app.get('port'), function(){
