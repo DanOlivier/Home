@@ -32,6 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use(express.static(path.join(__dirname, 'node_modules/font-awesome')));
+//app.use(express.static(path.join(__dirname, 'node_modules/jQuery')));
+
 // development only
 if ('development' == app.get('env')) {
   //app.set('view options', { pretty: true }); // Express 2.x

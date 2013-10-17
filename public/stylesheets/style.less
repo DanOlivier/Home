@@ -1,4 +1,5 @@
 // Order is more general at the top towards more specific
+@import "custom-variables.less";
 
 // Debugging layout ===========================================================
 [class*="col-"] {
@@ -34,30 +35,42 @@ hr {
   //font-weight : bold;
   //color: blue;
 }
-.name-row { font-weight : bold; }
+.name-row { 
+  font-size: 20px; 
+  font-weight : bold; 
+}
 
 .panel[class*="col-"] {
-  padding-left: 0; padding-right: 0;
+  //padding-left: 0; padding-right: 0;
   //margin-bottom: 0px;
 }
 
 // Tables ---------------------------------------------------------------------
-.row#contact-information { 
-  h2 { font-size: 20px; }
+h2 { font-size: 20px !important; }
+.panel-body { padding: 5px; }
+
+.row { 
+  //border-top: 2px solid black;
+  .table { margin-bottom: 5px; }
 }
 
-.row:not(#contact-information) { 
-  border-top: 2px solid black;
-
-  table td, 
-  table th,
+section:not(#contact-information) 
+{
+  table.table td, 
+  table.table th,
   {
-    border: 1px solid rgba(30,120,120,.3);
+    border: 1px solid @panel-primary-border; //@table-border-color;
   }
 
-  table tr { border-top: 2px solid black; } 
-  table th { border-bottom: 2px solid black; }
+  // How to use @table-border-color (bootstrap variable)?
+  //.panel { border: 1px solid rgba(30,120,120,.3); }
+
+  // Paint only internal borders, with thick black rows and thinner column separators
+  table.table th { border-bottom: 2px solid black; }
+  table.table tr:not(:first-child) { border-top: 2px solid black; }
+  table.table tr:not(:last-child) { border-bottom: 2px solid black; } 
 }
+.panel-primary { border-width: 2px; }
 
 td.btn + td {
   display:inline-block;
@@ -96,7 +109,7 @@ td.btn + td {
 .glyphicon-2x {
     font-size: 16px;
 }
-.company-name { font-size: larger; font-weight: bold; }
+//.company-name { font-size: larger; font-weight: bold; }
 //.location { color: DarkGreen; }
 .time-duration { white-space: nowrap; }
 

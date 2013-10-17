@@ -22,10 +22,9 @@
     color:            @sidebar-color;
     background-color: @sidebar-bg;
     border-radius:    @sidebar-border-radius;
-    //border:           1px solid @sidebar-border;
   }
 
-  /* By default it's not affixed in mobile views, so undo that */
+  // By default it's not affixed in mobile views, so undo that
   &.affix {
     position: fixed;
   }
@@ -69,8 +68,8 @@
       &> li > a {
         padding-top:    3px;
         padding-bottom: 3px;
-        padding-left: 30px;
-        font-size: 90%;
+        padding-left:   30px;
+        font-size:      90%;
       }
     }
   }
@@ -88,7 +87,7 @@
     // Widen the fixed sidebar
     &.affix,
     &.affix-bottom {
-      //width: 213px;
+      width: 213px;
     }
     &.affix {
       position: fixed; // Undo the static from mobile first approach
@@ -107,7 +106,7 @@
     // Widen the fixed sidebar again
     &.affix-bottom,
     &.affix {
-      //width: 263px;
+      width: 263px;
     }
   }
 }
