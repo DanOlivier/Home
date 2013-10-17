@@ -1,0 +1,113 @@
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+@import "custom-variables.less";
+
+/* First level of nav */
+.bs-sidenav {
+  //margin-top: 30px;
+  //margin-bottom: 30px;
+  //padding-top:    10px;
+  //padding-bottom: 10px;
+  //text-shadow: 0 1px 0 #fff;
+  //background-color: #f7f5fa;
+  //border-radius: 5px;
+}
+
+.bs-sidebar {
+  * {
+    color:            @sidebar-color;
+    background-color: @sidebar-bg;
+    border-radius:    @sidebar-border-radius;
+    //border:           1px solid @sidebar-border;
+  }
+
+  /* By default it's not affixed in mobile views, so undo that */
+  &.affix {
+    position: fixed;
+  }
+  // Otherwise, there is a change in the width when at the top
+  &.affix-top {
+    position: fixed;
+  }
+
+  /* All levels of nav */
+  .nav {
+    &> li {
+      &> a {
+        display: block;
+        //padding: 5px 20px;
+        //color:          @sidebar-color;
+        border:           1px solid @sidebar-border;
+      }
+      &> a:hover,
+      &> a:focus {
+        //text-decoration: none;
+        color:            @sidebar-hover-color;
+        background-color: @sidebar-hover-bg;
+        //border-color:     @sidebar-hover-border;
+        border-right:     1px solid @sidebar-inner-border;
+      }
+    }
+    &> .active > a,
+    &> .active:hover > a,
+    &> .active:focus > a {
+      font-weight:        bold;
+      color:              @sidebar-active-color;
+      background-color:   @sidebar-active-bg;
+      border-right:       1px solid @sidebar-inner-border;
+    }
+
+    /* Nav: second level (shown on .active) */
+    .nav {
+      display: none; /* Hide by default, but at >768px, show it */
+      //margin-bottom: 8px;
+    
+      &> li > a {
+        padding-top:    3px;
+        padding-bottom: 3px;
+        padding-left: 30px;
+        font-size: 90%;
+      }
+    }
+  }
+  /* Show and affix the side nav when space allows it */
+  @media screen and (min-width: 992px) {
+    .nav {
+      //display: block;
+      .nav {
+        display: block;
+      }
+      &> .active > ul {
+        //display: block;
+      }
+    }
+    // Widen the fixed sidebar
+    &.affix,
+    &.affix-bottom {
+      //width: 213px;
+    }
+    &.affix {
+      position: fixed; // Undo the static from mobile first approach
+      //top: 80px;
+    }
+    &.affix-bottom {
+      //position: absolute; // Undo the static from mobile first approach
+    }
+    &.affix-bottom .bs-sidenav,
+    &.affix .bs-sidenav {
+      //margin-top: 0;
+      //margin-bottom: 0;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    // Widen the fixed sidebar again
+    &.affix-bottom,
+    &.affix {
+      //width: 263px;
+    }
+  }
+}
