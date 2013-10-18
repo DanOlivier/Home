@@ -9,10 +9,13 @@ html
         link(rel='stylesheet', href='/css/bootstrap.css')
       else
         link(rel='stylesheet', href='/css/bootstrap.min.css')
-    if env.NODE_ENV == 'development'
-      link(rel='stylesheet', href='/css/font-awesome.css')
-    else
-      link(rel='stylesheet', href='/css/font-awesome.min.css')
+    //-div
+      if env.NODE_ENV == 'development'
+        link(rel='stylesheet', href='font-awesome/css/font-awesome.css')
+      else
+        link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+    //- Use 'less' dir to alter FA vars (such as @FontAwesomePath)
+    link(rel='stylesheet', href='font-awesome/less/font-awesome.css')
     
     link(rel="stylesheet" href="stylesheets/style.css")
      
