@@ -6,7 +6,7 @@
  */
 @import "custom-variables.less";
 
-/* First level of nav */
+// First level of nav
 .bs-sidenav {
   //margin-top: 30px;
   //margin-bottom: 30px;
@@ -17,27 +17,25 @@
   //border-radius: 5px;
 }
 
+
 .bs-sidebar {
+  position: fixed;
+  z-index: 1; 
+  //width: 100%;
+  //min-width: 100%;
+  top: 80px;
+
   * {
     color:            @sidebar-color;
     background-color: @sidebar-bg;
     border-radius:    @sidebar-border-radius;
   }
 
-  // By default it's not affixed in mobile views, so undo that
-  &.affix {
-    position: fixed;
-  }
-  // Otherwise, there is a change in the width when at the top
-  &.affix-top {
-    position: fixed;
-  }
-
-  /* All levels of nav */
+  // All levels of nav
   .nav {
     &> li {
       &> a {
-        display: block;
+        //display: block;
         //padding: 5px 20px;
         //color:          @sidebar-color;
         border:           1px solid @sidebar-border;
@@ -60,9 +58,9 @@
       border-right:       1px solid @sidebar-inner-border;
     }
 
-    /* Nav: second level (shown on .active) */
+    // Nav: second level (shown on .active)
     .nav {
-      display: none; /* Hide by default, but at >768px, show it */
+      display: none; // Hide by default, but at >768px, show it
       //margin-bottom: 8px;
     
       &> li > a {
@@ -73,17 +71,21 @@
       }
     }
   }
-  /* Show and affix the side nav when space allows it */
-  @media screen and (min-width: 992px) {
+  // Show and affix the side nav when space allows it
+  @media screen and (min-width: 768px) {
     .nav {
-      //display: block;
-      .nav {
+      &> .active > ul {
         display: block;
       }
-      &> .active > ul {
-        //display: block;
-      }
     }
+  }
+
+  // By default it's not affixed in mobile views, so undo that
+  /*&.affix {
+    position: static;
+  }
+
+  @media screen and (min-width: 992px) {
     // Widen the fixed sidebar
     &.affix,
     &.affix-bottom {
@@ -91,15 +93,15 @@
     }
     &.affix {
       position: fixed; // Undo the static from mobile first approach
-      //top: 80px;
+      top: 80px;
     }
     &.affix-bottom {
-      //position: absolute; // Undo the static from mobile first approach
+      position: absolute; // Undo the static from mobile first approach
     }
     &.affix-bottom .bs-sidenav,
     &.affix .bs-sidenav {
-      //margin-top: 0;
-      //margin-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
   @media screen and (min-width: 1200px) {
@@ -108,5 +110,5 @@
     &.affix {
       width: 263px;
     }
-  }
+  }*/
 }

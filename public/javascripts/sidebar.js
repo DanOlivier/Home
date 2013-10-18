@@ -29,8 +29,8 @@
       var $sideBar = $('.bs-sidebar')
 
       $sideBar.affix({
-        //offset: { top: 0 }
-        offset: {
+        offset: { top: 0 }
+        /*offset: {
           top: function () {
             var offsetTop      = $sideBar.offset().top
             //var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10);
@@ -42,7 +42,7 @@
         , bottom: function () {
             return (this.bottom = $('.bs-footer').outerHeight(true))
           }
-        }
+        }*/
       })
     }, 100)
 
