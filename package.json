@@ -10,7 +10,6 @@
     "jade": "*",
     "less-middleware": "*",
     "bootstrap": "git://github.com/twbs/bootstrap.git",
-    "nodedump": "0.0.33",
-    "font-awesome": "~3.2.1"
+    "nodedump": "0.0.33"
   }
 }
