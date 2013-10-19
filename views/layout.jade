@@ -58,6 +58,10 @@ html
     else
       script(src='js/bootstrap.min.js')
     //-script(src="less.js" type="text/javascript")
+    if env.NODE_ENV == 'development'
+      script(src='moment/min/moment-with-langs.js')
+    else
+      script(src='moment/min/moment-with-langs.min.js')
 
     block script
 

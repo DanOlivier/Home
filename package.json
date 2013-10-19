@@ -10,6 +10,8 @@
     "jade": "*",
     "less-middleware": "*",
     "bootstrap": "git://github.com/twbs/bootstrap.git",
-    "nodedump": "0.0.33"
+    "nodedump": "0.0.33",
+    "i18n": "git://github.com/mashpie/i18n-node.git",
+    "moment": "~2.3.1"
   }
 }
