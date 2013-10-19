@@ -2,7 +2,15 @@ doctype 5
 html
   head
     script(src='jquery/jquery.js')
+    
+    if env.NODE_ENV == 'development'
+      script(src='js/bootstrap.js')
+    else
+      script(src='js/bootstrap.min.js')
+
     script(src='javascripts/toc.js')
+    script(src='javascripts/sidebar2.js')
+
     
     //- Configure the sidebar
     script.
@@ -10,76 +18,89 @@ html
         //$(".bs-sidenav li > a[href]").css("background-color","green");
         $("#toc").toc({
           'selectors': ['h1', 'h2', 'h3', 'h4', 'h5'],
-          'ulClass': 'nav bs-sidenav',
+          'ulClass': 'nav',
           'anchorName': function(i, heading, prefix) { //custom function for anchor name
-            //debugger;
             //console.log('anchorName: ' + i + ', ' + heading.innerText + ', ' + prefix);
             return prefix + i;
           },
           'headerText': function(i, heading, $heading) { //custom function building the header-item text
-            //debugger;
             //console.log('headerText: ' + i + ', ' + heading + ', ' + $heading);
             return $heading.text();
           },
           'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
-            //debugger;
             //console.log('itemClass: ' + i + ', ' + heading + ', ' + $heading + ', ' + prefix);
             //return $heading[0].tagName.toLowerCase();
           }        
         });
       });
+
+    link(rel='stylesheet', href='stylesheets/bootstrap-custom-theme.css')
+    link(rel='stylesheet', href='stylesheets/sidebar.css')
+
   body
-    #toc
-    div
-      h1 H1
-      p Hello World!
-      h3 H3
-      div
-        p random text
-        h4 H4
-        p random text
-        h5 H5
-        p random text
-        h5 H5
-        p random text
-        h5 H5
-        h2 H2
-        h5 H5
-        h4 H4
-        h5 H5
-        h5 H5
-        h5 H5
-        h5 H5
-        h5 H5
-        h5 H5
-        h2 H2
-        p random text
-        p random text
-        p random text
-        h4 H4
-        h3 H3
-        p random text
-        p random text
-        p random text
-        h4 H4
-        h1 H1
-        p random text
-        p random text
-        p random text
-        h3 H3
-        h1 H1
-        h3 H3
-        h3 H3
-        h5 H5
-        h5 H5
-        h5 H5
-        h3 H3
-        h4 H4
-        h4 H4
-        h4 H4
-        h4 H4
-        h5 H5
-        h5 H5
-        h5 H5
-        h5 H5
-        h5 H5
+    .container
+        .row
+          section.col-md-3
+            .bs-sidebar
+              #toc
+          section.col-md-6
+            h1 H1
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h2 H2
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h3 H3
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h4 H4
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h5 H5
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h1 H1
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h2 H2
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h3 H3
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h4 H4
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h5 H5
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h1 H1
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h2 H2
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h3 H3
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h4 H4
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah
+            h5 H5
+            p Content blah blah blah
+            p Content blah blah blah
+            p Content blah blah blah

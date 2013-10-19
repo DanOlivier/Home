@@ -5,9 +5,9 @@
     var $window = $(window)
     var $body   = $(document.body)
 
+    // Allows the sidebar items to be colored (operates on :hover and :active properties?)
     $body.scrollspy({
       target: '.bs-sidebar'
-      , offset: 100
     })
 
     $window.on('load', function () {
@@ -15,23 +15,16 @@
     })
 
     var $sideBar = $('.bs-sidebar')
-    console.log('$sideBar: ' + $sideBar)
-    
-    var offset = $sideBar.offset()
-    var position = $sideBar.position()
 
-    $window.on('scroll', function () { 
-      var $sideBar = $('.bs-sidebar')
-      var scrollTop = $(this).scrollTop();
-      function printSidebar() { return [$sideBar.width(), $sideBar.height(), 
-        $sideBar.position().left, $sideBar.position().top,
-        $sideBar.offset().left, $sideBar.offset().top ]; }
-      console.log(
-        'Sidebar (w, h, position, offset): ' + printSidebar() +
-        ', $(this).scrollTop(): ' + scrollTop
-        )
-      //$sideBar.offset({ top: scrollTop + offset.top, left: offset.left })
-    })
-  })
+    // Was unable to use the bootstrap affix.js functions (strange side-effects when toggling between .affix and .affix-top)
+    function lockSidebarWidth() {
+      var parent = $sideBar.parent();
+      console.log('Adjusting sidebar width: ' + parent.width());
+      $sideBar.width(parent.width());
+    }
+
+    $window.on("resize", lockSidebarWidth);
+    $(document).on("ready", lockSidebarWidth);
+})
 
 }(window.jQuery)

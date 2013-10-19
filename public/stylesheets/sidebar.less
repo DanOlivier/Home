@@ -6,24 +6,9 @@
  */
 @import "custom-variables.less";
 
-// First level of nav
-.bs-sidenav {
-  //margin-top: 30px;
-  //margin-bottom: 30px;
-  //padding-top:    10px;
-  //padding-bottom: 10px;
-  //text-shadow: 0 1px 0 #fff;
-  //background-color: #f7f5fa;
-  //border-radius: 5px;
-}
-
-
 .bs-sidebar {
   position: fixed;
-  z-index: 1; 
-  //width: 100%;
-  //min-width: 100%;
-  top: 80px;
+  top: 50px;
 
   * {
     color:            @sidebar-color;
@@ -32,6 +17,7 @@
   }
 
   // All levels of nav
+  // Note: display: none removes the element out of the flow of the html whereas visibility:hidden does not.
   .nav {
     &> li {
       &> a {
@@ -45,8 +31,10 @@
         //text-decoration: none;
         color:            @sidebar-hover-color;
         background-color: @sidebar-hover-bg;
-        //border-color:     @sidebar-hover-border;
-        border-right:     1px solid @sidebar-inner-border;
+        font-weight:        bold;
+        //font-size:        larger; // also has the effect of changing the width of the sidebar (which has been locked in js load and resize handlers)
+        border-color:     @sidebar-hover-border;
+        //border-right:     2px solid @sidebar-inner-border;
       }
     }
     &> .active > a,
@@ -55,7 +43,7 @@
       font-weight:        bold;
       color:              @sidebar-active-color;
       background-color:   @sidebar-active-bg;
-      border-right:       1px solid @sidebar-inner-border;
+      border-right:       2px solid @sidebar-inner-border;
     }
 
     // Nav: second level (shown on .active)
@@ -74,41 +62,11 @@
   // Show and affix the side nav when space allows it
   @media screen and (min-width: 768px) {
     .nav {
-      &> .active > ul {
+      &> .active > ul,
+      &> .active:hover > ul,
+      &> .active:focus > ul {
         display: block;
       }
     }
   }
-
-  // By default it's not affixed in mobile views, so undo that
-  /*&.affix {
-    position: static;
-  }
-
-  @media screen and (min-width: 992px) {
-    // Widen the fixed sidebar
-    &.affix,
-    &.affix-bottom {
-      width: 213px;
-    }
-    &.affix {
-      position: fixed; // Undo the static from mobile first approach
-      top: 80px;
-    }
-    &.affix-bottom {
-      position: absolute; // Undo the static from mobile first approach
-    }
-    &.affix-bottom .bs-sidenav,
-    &.affix .bs-sidenav {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-  @media screen and (min-width: 1200px) {
-    // Widen the fixed sidebar again
-    &.affix-bottom,
-    &.affix {
-      width: 263px;
-    }
-  }*/
 }

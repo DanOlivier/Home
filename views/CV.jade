@@ -18,8 +18,9 @@ append content
   .container
     .row
       .col-md-3
+        // .bs-sidebar class is locked to the width of the parent (in sidebar2.js)
         section.bs-sidebar.hidden-print(role='complementary')
-          #toc(width="100%")
+          #toc
 
       .col-md-9(role='main')
         h1 Curriculum Vitae
