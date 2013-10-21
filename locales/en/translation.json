@@ -1,0 +1,18 @@
+{
+  "app": {
+    "name": "i18next",
+    "from": "from",
+    "to":   "to",
+    "and":  "and",
+    "or":   "or",
+    "month":        "month",
+    "month_plural": "months",
+    "year":         "year",
+    "year_plural":  "years"
+  },
+  "nav": {
+    "home": "Home",
+    "page1": "Page One",
+    "page2": "Page Two"
+  }
+}

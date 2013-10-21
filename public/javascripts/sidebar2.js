@@ -15,6 +15,12 @@
     })
 
     var $sideBar = $('.bs-sidebar')
+    
+    // Adjust for the new navbar
+    var navHeight = $('.navbar').outerHeight(true);
+    var offsetTop = $sideBar.offset().top;
+    //$sideBar.top(navHeight + offsetTop);
+    $sideBar.offset({ top: navHeight + offsetTop })
 
     // Was unable to use the bootstrap affix.js functions (strange side-effects when toggling between .affix and .affix-top)
     function lockSidebarWidth() {

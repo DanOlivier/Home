@@ -13,5 +13,9 @@
     "nodedump": "0.0.33",
     "i18n": "git://github.com/mashpie/i18n-node.git",
     "moment": "~2.3.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-webfont": "~0.1.10"
   }
 }

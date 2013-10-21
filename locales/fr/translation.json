@@ -1,0 +1,19 @@
+{
+  "app": {
+    "name": "i18next",
+    "from": "de",
+    "to":   "à",
+    "and":  "et",
+    "or":   "ou",
+    "month":        "mois",
+    "month_plural": "$t(app.month)",
+    "year":         "an",
+    "year_plural":  "ans"
+  },
+  "nav": {
+    "home": "Maison",
+    "page1": "La Une",
+    "page2": "Page Deux",
+    "CV": "Curriculum Vitae"
+  }
+}

@@ -18,10 +18,70 @@ html
     link(rel='stylesheet', href='font-awesome/less/font-awesome.css')
     
     link(rel="stylesheet" href="stylesheets/style.css")
-     
+    link(rel="stylesheet" href="stylesheets/my-flags.css")
+
     block style
   body
-    header
+    header(data-i18n='app.name')
+
+    // Use .navbar-static-top to eliminate the border radius
+       Use code .navbar-right to right-align link and dropdown
+       Use code .pull-right in the right-aligned code .dropdown-menu so that the menu isn't cutoff
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') Title
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li.active: a(href='#') Home
+          //li: a(href='#') Link
+          //li: a(href='#') Link
+        //form.navbar-form.navbar-left(role='search')
+          .form-group
+            input.form-control(type='text', placeholder='Search')
+          button.btn.btn-default(type='submit') Submit
+        ul.nav.navbar-nav.navbar-right
+          li: a(href='/CV')= t('nav.CV')
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown')
+              | Pick language
+              b.caret
+            ul.dropdown-menu.pull-right
+              li
+                a(href='#') English
+                  span.bfh-languages(data-language='en', data-flags='true')
+                    i.myflags-us
+                    i.myflags-uk
+                    i.myflags-ca
+                a(href='#') French
+                  span.bfh-languages(data-language='fr', data-flags='true')
+                    i.myflags-ca-qc
+                    i.myflags-fr
+
+              li
+                a(href='#') Another action
+              li
+                a(href='#') Something else here
+              li
+                a(href='#') Separated link
+  
+    //.navbar2.i18n
+      h1= t('app.selectlanguage')
+      ul 
+        li: a#de(href='/?setLng=de-DE')= t('app.german')
+        li: a#de(href='/?setLng=en-US')= t('app.english')
+        li: a#de(href='/?setLng=fr-FR')= t('app.french')
+
+      ul.nav
+        li: a(href='#')= t('nav.home')
+        li: a(href='#')= t('nav.page1')
+        li: a(href='#')= t('nav.page2')
+        li: a(href='/CV')= t('nav.CV')
+
     //-header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
       .container
         .navbar-header
@@ -57,11 +117,14 @@ html
       script(src='js/bootstrap.js')
     else
       script(src='js/bootstrap.min.js')
-    //-script(src="less.js" type="text/javascript")
-    if env.NODE_ENV == 'development'
-      script(src='moment/min/moment-with-langs.js')
-    else
-      script(src='moment/min/moment-with-langs.min.js')
+
+    //span
+      if env.NODE_ENV == 'development'
+        script(src='moment/min/moment-with-langs.js')
+      else
+        script(src='moment/min/moment-with-langs.min.js')
+    
+    //script(src='i18next/lib/i18next.js')
 
     block script
 
