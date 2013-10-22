@@ -61,20 +61,6 @@ if ('development' == app.get('env')) {
 
 //app.get('/', routes.index);
 
-app.get('/setLanguage/:lng', function(req, res) {
-  console.log('Change language : ' + req.params.lng);
-  i18n.setLng(req.params.lng, function(){
-    //res.redirect('/');
-  });
-});
-
-app.get('/', function(req, res){
-  moment.lang(req.language);
-  //i18n.setLng(req.language);
-  console.log('Lang for index: ' + req.language)
-  res.render('index.jade');
-});
-
 //app.get('/users', user.list);
 i18n.registerAppHelper(app)
 
@@ -87,13 +73,21 @@ app.locals.svg = svg;
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)\??/, function(req, res, next) { 
 
-  var file = path.join(path.join(__dirname, 'views'), req.params[0]);
+  var match = /(.{2})(-.{2})?/.exec(req.language)
 
+  var filename = (req.params[0] || "index") + '.jade';
+  var file = path.join(__dirname, 'views', match[1], filename);
+  if(!fs.existsSync(file)) {
+    file = path.join(__dirname, 'views', filename);
+    if(!fs.existsSync(file)) {
+      next();
+    }
+  }
   moment.lang(req.language);
   var now = moment();
   console.log('Lang for req.url: (' + req.language + ') ' + moment( now ).format('LLLL'))
   
-  res.render(file);
+  res.render(file, { currentUrl: req.path });
 });
 
 http.createServer(app).listen(app.get('port'), function(){

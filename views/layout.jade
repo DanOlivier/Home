@@ -44,6 +44,7 @@ append header
         button.btn.btn-default(type='submit') Submit
       ul.nav.navbar-nav.navbar-right
         li: a(href='/CV')= t('nav.CV')
+
         // Links to '/CV' are hard-coded, but I wish they were implied (while maintining flexible routing)
         li.dropdown#pick-language1
           button.btn(type='button', data-toggle='dropdown')
@@ -54,7 +55,7 @@ append header
           ul.dropdown-menu(role='menu')
             each val, index in svg.supportedLngs()
               li
-                a.btn(href='/CV?lang=#{val}')
+                a.btn(href='#{currentUrl}?lang=#{val}')
                   - var svgpath = svg.ConvertToSVGPath(val)
                   //object(data=svgpath, type='image/svg+xml')            
                   img(src=svgpath, type='image/svg+xml')            
@@ -65,6 +66,16 @@ append header
   div(style='border: 2px solid red')
     p= i18n.lng()
     p= moment().format('LLLL')
+
+append content
+  .container
+    .row
+      .col-md-3
+        // .bs-sidebar class is locked to the width of the parent (in sidebar2.js)
+        section.bs-sidebar.hidden-print(role='complementary')
+          #toc
+
+      .col-md-9(role='main')
 
 append script
   //- Parent script block precedes the statements of those who extend/derive from this
