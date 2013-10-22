@@ -19,7 +19,14 @@ i18n.init({
   preload: ['en', 'fr'],
   supportedLngs: svg.supportedLngs(),
   fallbackLng: false
-});
+  //??? ignoreRoutes: ['images/', 'public/', 'css/', 'js/']
+} 
+/*function(t) {
+    i18n.addRoute('/:lng/CV', ['en', 'fr'], app, 'get', function(req, res) {
+      // res.send(...);
+    }
+  }*/
+);
 
 var app = express();
 
@@ -79,12 +86,13 @@ app.locals.svg = svg;
 
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)\??/, function(req, res, next) { 
-  //debugger;
+
   var file = path.join(path.join(__dirname, 'views'), req.params[0]);
 
   moment.lang(req.language);
   var now = moment();
   console.log('Lang for req.url: (' + req.language + ') ' + moment( now ).format('LLLL'))
+  
   res.render(file);
 });
 

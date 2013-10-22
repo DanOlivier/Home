@@ -5,21 +5,23 @@ var Home = (function() {
       $("#toc").toc({
         'selectors': ['h2','h3'],
         'ulClass': 'nav',
-        'anchorName': function(i, heading, prefix) { //custom function for anchor name
-          //debugger;
-          //console.log('anchorName: ' + i + ', ' + heading.innerText + ', ' + prefix);
-          return prefix + i;
+        // custom function for anchor name (may select a different node to attach a link to)
+        anchorName: function(i, tag, level, stack, $h, prefix) {
+          // attach an anchor
+          var name = prefix+i
+          $h.parent()
+          $('<span/>').attr('id', name).insertBefore($h);
+          return name;
         },
-        'headerText': function(i, heading, $heading) { //custom function building the header-item text
-          //debugger;
-          //console.log('headerText: ' + i + ', ' + heading + ', ' + $heading);
-          return $heading.text();
+        // custom function building the header-item text 
+        // (get a shorter name, or attach the anchor to the parent)
+        anchorName: function(i, tag, level, stack, $h, prefix) {
+          
+          // attach an anchor
+          var name = prefix+i
+          $('<span/>').attr('id', name).insertBefore($h);
+          return name;
         },
-        'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
-          //debugger;
-          //console.log('itemClass: ' + i + ', ' + heading + ', ' + $heading + ', ' + prefix);
-          //return $heading[0].tagName.toLowerCase();
-        }        
       });
     }
   }

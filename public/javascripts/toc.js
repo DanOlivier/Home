@@ -19,7 +19,7 @@
 
   function IterateHeadings(i, heading, opts, stack) {
     var $h = $(heading);
-    //debugger;
+
     var tag = $h[0].tagName.toLowerCase();
     var level = opts.selectors.indexOf(tag)+1;
 
@@ -46,9 +46,7 @@
       stack.pop(); 
     }
 
-    //add anchor
-    var anchorName = opts.anchorName(i, heading, opts.prefix);
-    var anchor = $('<span/>').attr('id', anchorName).insertBefore($h);
+    var anchorName = opts.anchorName(i, tag, level, stack, $h, opts.prefix);
 
     //build TOC item
     var a = $('<a/>')
@@ -90,8 +88,11 @@
     selectors: ['h1','h2','h3'],
     prefix: 'toc',
     ulClass: '',
-    anchorName: function(i, heading, prefix) {
-      return prefix+i;
+    anchorName: function(i, tag, level, stack, $h, prefix) {
+      // attach an anchor
+      var name = prefix+i
+      $('<span/>').attr('id', name).insertBefore($h);
+      return name;
     },
     headerText: function(i, heading, $heading) {
       return $heading.text();

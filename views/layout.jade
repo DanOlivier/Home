@@ -1,109 +1,89 @@
-doctype 5
-html
-  head
-    //- Parent style block precedes the statements of those who extend from this
+extends layout-base
+- console.log('Current i18n language:' + i18n.lng())
 
-    link(rel='stylesheet', href='stylesheets/bootstrap-custom-theme.css')
-    //-div
-      if env.NODE_ENV == 'development'
-        link(rel='stylesheet', href='/css/bootstrap.css')
-      else
-        link(rel='stylesheet', href='/css/bootstrap.min.css')
-    //-div
-      if env.NODE_ENV == 'development'
-        link(rel='stylesheet', href='font-awesome/css/font-awesome.css')
-      else
-        link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
-    //- Use 'less' dir to alter FA vars (such as @FontAwesomePath)
-    link(rel='stylesheet', href='font-awesome/less/font-awesome.css')
-    
-    link(rel="stylesheet" href="stylesheets/style.css")
+append style
+  //- Parent style block precedes the statements of those who extend from this
+  link(rel='stylesheet', href='stylesheets/bootstrap-custom-theme.css')
+  //-div
+    if env.NODE_ENV == 'development'
+      link(rel='stylesheet', href='/css/bootstrap.css')
+    else
+      link(rel='stylesheet', href='/css/bootstrap.min.css')
+  //-div
+    if env.NODE_ENV == 'development'
+      link(rel='stylesheet', href='font-awesome/css/font-awesome.css')
+    else
+      link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+  //- Use 'less' dir to alter FA vars (such as @FontAwesomePath)
+  link(rel='stylesheet', href='font-awesome/less/font-awesome.css')
+  
+  link(rel="stylesheet" href="stylesheets/style.css")
 
-    link(rel="stylesheet" href="stylesheets/navbar.css")
+  link(rel="stylesheet" href="stylesheets/navbar.css")
 
-    block style
-  body
-    //-header(data-i18n='app.name')
+append header
+  //- Use .navbar-static-top to eliminate the border radius
+     Use code .navbar-right to right-align link and dropdown
+     Use code .pull-right in the right-aligned code .dropdown-menu so that the menu isn't cutoff
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#') Title
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active: a(href='#') Home
+        //li: a(href='#') Link
+        //li: a(href='#') Link
+      //-form.navbar-form.navbar-left(role='search')
+        .form-group
+          input.form-control(type='text', placeholder='Search')
+        button.btn.btn-default(type='submit') Submit
+      ul.nav.navbar-nav.navbar-right
+        li: a(href='/CV')= t('nav.CV')
+        // Links to '/CV' are hard-coded, but I wish they were implied (while maintining flexible routing)
+        li.dropdown#pick-language1
+          button.btn(type='button', data-toggle='dropdown')
+            div.dropdown-toggle
+              - var svgpath = svg.ConvertToSVGPath(i18n.lng())
+              //object(data=svgpath, type='image/svg+xml')
+              img(src=svgpath, type='image/svg+xml')
+          ul.dropdown-menu(role='menu')
+            each val, index in svg.supportedLngs()
+              li
+                a.btn(href='/CV?lang=#{val}')
+                  - var svgpath = svg.ConvertToSVGPath(val)
+                  //object(data=svgpath, type='image/svg+xml')            
+                  img(src=svgpath, type='image/svg+xml')            
 
-    //- Use .navbar-static-top to eliminate the border radius
-       Use code .navbar-right to right-align link and dropdown
-       Use code .pull-right in the right-aligned code .dropdown-menu so that the menu isn't cutoff
-    nav.navbar.navbar-inverse.navbar-fixed-top
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand(href='#') Title
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav
-          li.active: a(href='#') Home
-          //li: a(href='#') Link
-          //li: a(href='#') Link
-        //-form.navbar-form.navbar-left(role='search')
-          .form-group
-            input.form-control(type='text', placeholder='Search')
-          button.btn.btn-default(type='submit') Submit
-        ul.nav.navbar-nav.navbar-right
-          li: a(href='/CV')= t('nav.CV')
-          // Links to '/CV' are hard-coded, but I wish they were implied (while maintining flexible routing)
-          li.dropdown#pick-language1
-            button.btn(type='button', data-toggle='dropdown')
-              div.dropdown-toggle
-                - var svgpath = svg.ConvertToSVGPath(i18n.lng())
-                //object(data=svgpath, type='image/svg+xml')
-                img(src=svgpath, type='image/svg+xml')
-            ul.dropdown-menu(role='menu')
-              each val, index in svg.supportedLngs()
-                li
-                  a.btn(href='/CV?lang=#{val}')
-                    - var svgpath = svg.ConvertToSVGPath(val)
-                    //object(data=svgpath, type='image/svg+xml')            
-                    img(src=svgpath, type='image/svg+xml')            
+.timestamp
+  //- This div will be pushed down, preventing the content from overlapping with the navbar
+  //- why not just?  { padding-top: 40px; }
+  div(style='border: 2px solid red')
+    p= i18n.lng()
+    p= moment().format('LLLL')
 
-    //- This div will be pushed down, preventing the content from overlapping with the navbar
-    //- why not just?  { padding-top: 40px; }
-    div#content
-      div
-        div(style='border: 2px solid red')
-          p= i18n.lng()
-          p= moment().format('LLLL')
-      block content
+append script
+  //- Parent script block precedes the statements of those who extend/derive from this
+  //-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+  //-script(src='http://code.jquery.com/jquery-latest.js')
+  script(src='jquery/jquery.js')
+  
+  if env.NODE_ENV == 'development'
+    script(src='js/bootstrap.js')
+  else
+    script(src='js/bootstrap.min.js')
 
-    footer
-      //- Parent script block precedes the statements of those who extend/derive from this
-      //-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
-      //-script(src='http://code.jquery.com/jquery-latest.js')
-      script(src='jquery/jquery.js')
-      
-      if env.NODE_ENV == 'development'
-        script(src='js/bootstrap.js')
-      else
-        script(src='js/bootstrap.min.js')
+  //-span
+    if env.NODE_ENV == 'development'
+      script(src='moment/min/moment-with-langs.js')
+    else
+      script(src='moment/min/moment-with-langs.min.js')
 
-      script.
-        // Adjust for the navbar (probably a better way of doing this). Use #content?
-        // Has the advantage of not repeating the height of the navbar (which may change due to stylesheet calculations)
-        var navHeight = $('.navbar').outerHeight(true);
-        var next = $('.navbar').next();
-        next.offset({ top: navHeight }) // push down the top of the next element (+= next.top-margin()?)
-
-      - console.log('Current i18n language:' + i18n.lng())
-      script.
-        $(".dropdown#pick-language1").ready(function(){
-          //alert('Ready!')
-        })
-
-      //-span
-        if env.NODE_ENV == 'development'
-          script(src='moment/min/moment-with-langs.js')
-        else
-          script(src='moment/min/moment-with-langs.min.js')
-
-      //- Only server-side translations
-      //-script(src='i18next/lib/i18next.js')
-      
-      script(src='javascripts/navbar.js')
-
-      block script
+  //- Only server-side translations
+  //-script(src='i18next/lib/i18next.js')
+  
+  script(src='javascripts/navbar.js')
