@@ -1,0 +1,19 @@
+extends layout
+
+append script
+  script(src='javascripts/sidebar2.js')
+  script(src='javascripts/toc.js')
+
+append style
+  link(rel='stylesheet', href='stylesheets/sidebar.css')
+
+append content
+  .container
+    .row
+      .col-md-3
+        // .bs-sidebar class is locked to the width of the parent (in sidebar2.js)
+        section.bs-sidebar.hidden-print(role='complementary')
+          #toc
+
+      .col-md-9(role='main')
+        block content2
