@@ -2,7 +2,8 @@ svg(
   xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#', 
   xmlns:xlink="http://www.w3.org/1999/xlink",
   xmlns='http://www.w3.org/2000/svg', 
-  height='480', width='640', 
+  width='640', height='480', 
+  viewBox='0 0 58 30'
   version='1.1', 
   xmlns:cc='http://creativecommons.org/ns#', 
   xmlns:dc='http://purl.org/dc/elements/1.1/')
@@ -61,8 +62,9 @@ svg(
       g(transform='translate(0 15)')
         rect(y='-3', height='6', width='58')
 
-  g(transform='scale(11.1)')
-    g(transform='scale(1 1.45)', clip-path='url(#clip2)')
+  //g(transform='scale(11.1)')
+  g
+    g(clip-path='url(#clip2)')
       //- fill='midnightblue'
       rect(height='30', width='58', fill='#191970')
       //- Draw outlines separately

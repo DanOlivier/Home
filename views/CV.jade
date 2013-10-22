@@ -8,7 +8,9 @@ append script
 
   //- Configure the sidebar
   script(src="javascripts/Home.js")
-  script(src="javascripts/boot.js")
+  //script(src="javascripts/boot.js")
+  script.
+    $(document).ready(Home.boot);   
 
 append style
   link(rel='stylesheet', href='stylesheets/sidebar.css')

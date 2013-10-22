@@ -2,12 +2,37 @@ extends layout
 
 append style
   style.
-    p.box { height: 500px; border: 1px solid red; }
+    .mysmall2 > object { 
+      //width: 40px; height: 30px; 
+      width: 32px; height: 24px; 
+      border: 1px solid black; 
+    }
+    .navbar { margin-bottom: 0px; }
 
-block content
-  //h1= title
-  //p Welcome to #{title}
-  p.box Hello World
-  p.box Hello World
-  p.box Hello World
-  p.box Hello World
+append script
+  script.
+   // Adjust for the new navbar
+      var navHeight = $('.navbar').outerHeight(true);
+      $('.navbar').next().offset({ top: navHeight })
+
+//- Should we ever need to adjust the contents of an SVG
+//-append script
+  script.
+    $(document).ready(function() {
+      var svgs = $('object')
+      svgs.each(function(i, svg) {
+        //alert("Home Page Ready");
+        console.log('Found an object: ' + svg.data)
+        $(svg).removeAttr('width')
+        $(svg).removeAttr('height')
+        $(svg).attr('preserveAspectRatio=xMinYMin meet')
+      })
+    });
+
+append content
+  .mysmall2 SVG test with support for the shared navbar
+    object(data='svg/ca-qc.svg', type='image/svg+xml')
+    object(data='svg/ca.svg', type='image/svg+xml')
+    object(data='svg/us.svg', type='image/svg+xml')
+    object(data='svg/uk.svg', type='image/svg+xml')
+    object(data='svg/fr.svg', type='image/svg+xml')

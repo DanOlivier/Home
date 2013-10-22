@@ -7,7 +7,9 @@ append script
 
   //- Configure the sidebar
   script(src="javascripts/Home.js")
-  script(src="javascripts/boot.js")
+  //script(src="javascripts/boot.js")
+  script.
+    $(document).ready(Home.boot);   
 
 append style
   link(rel='stylesheet', href='stylesheets/sidebar.css')
@@ -18,6 +20,7 @@ append content
   .container
     .row
       .col-md-3
+        // .bs-sidebar class is locked to the width of the parent (in sidebar2.js)
         section.bs-sidebar.hidden-print(role='complementary')
           #toc
 
@@ -165,7 +168,7 @@ append content
                 table.table.align-right
                   tbody
                     tr
-                      td 1989 - 1993
+                      td: span.time-duration= dateHelpers.dateHelper([1989, 9]) + ' - ' + dateHelpers.dateHelper([1993, 5])
                       td
                         p: span.company-name: a(href="http://www.polymtl.ca") École Polytechnique de Montreal
                         p Computer Engineering, major in software systems

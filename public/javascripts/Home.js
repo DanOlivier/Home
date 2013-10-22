@@ -1,3 +1,4 @@
+// Client-side
 var Home = (function() {
   return {
     boot: function( event ) {

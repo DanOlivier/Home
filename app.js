@@ -1,32 +1,30 @@
-
-/**
- * Module dependencies.
- */
-
-var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var http = require('http');
-var path = require('path');
-var fs = require('fs');
-var util = require('util');
-var nodedump = require('nodedump');
-var moment = require('moment');
-var dh = require('./public/javascripts/dateHelpers');
-var i18n = require('i18next');
+var 
+  express = require('express'),
+  routes = require('./routes'),
+  user = require('./routes/user'),
+  http = require('http'),
+  path = require('path'),
+  fs = require('fs'),
+  util = require('util'),
+  nodedump = require('nodedump'),
+  moment = require('moment'),
+  i18n = require('i18next'),
+  svg = require('./public/javascripts/svg');
 
 i18n.init({
   saveMissing: true,
   debug: true,
   detectLngQS: 'lang',
-  preload: ['en', 'fr']
+  lng: 'fr-CA',
+  preload: ['en', 'fr'],
+  supportedLngs: svg.supportedLngs(),
+  fallbackLng: false
 });
-
 
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3001); // port 8080 is used by the debugger
+app.set('port', process.env.PORT || 3001); // port 8080 is used by the (node-inspector) debugger
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 
@@ -56,6 +54,13 @@ if ('development' == app.get('env')) {
 
 //app.get('/', routes.index);
 
+app.get('/setLanguage/:lng', function(req, res) {
+  console.log('Change language : ' + req.params.lng);
+  i18n.setLng(req.params.lng, function(){
+    //res.redirect('/');
+  });
+});
+
 app.get('/', function(req, res){
   moment.lang(req.language);
   //i18n.setLng(req.language);
@@ -66,9 +71,11 @@ app.get('/', function(req, res){
 //app.get('/users', user.list);
 i18n.registerAppHelper(app)
 
+// Jade will have access to these
 app.locals.moment = moment;
 app.locals.env = process.env;
-app.locals.dateHelpers = dh;
+app.locals.dateHelpers = require('./public/javascripts/dateHelpers');
+app.locals.svg = svg;
 
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)\??/, function(req, res, next) { 

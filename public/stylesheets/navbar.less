@@ -1,0 +1,59 @@
+/*li.dropdown#pick-language1
+  button.btn
+    div.dropdown-toggle
+      object
+  ul.dropdown-menu
+    each supportedLang
+      li
+        a.btn
+          object
+*/
+
+.navbar { margin-bottom: 0px; }
+
+#pick-language1 {
+
+  // To center vertically: from .navbar-nav > li > a
+  //padding-top: 15px;
+  //padding-bottom: 15px;
+
+  img { 
+    width: 40px; 
+  }
+
+  object { 
+    width: 40px; height: 30px; 
+    //width: 32px; height: 24px; 
+    //border: .2px solid black;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .dropdown-menu {
+    min-width: 0; // from .btn
+    background-color: #222;
+    /*li > a {
+      border: 1px solid red;
+      display: block;
+      //padding: 3px 20px;
+    }*/
+  }
+
+  &> .btn { 
+    margin-top: 6px;
+  }
+  .btn { 
+    //border: 1px solid red;
+    // Override .btn padding 6px 12px
+    padding: 4px 8px;
+
+    background-color: #222;
+    border-color: #080808;
+
+    .dropdown-toggle {
+      //border: 1px solid blue;
+      //padding-left: 0px;
+      //padding-right: 0px;
+    }
+  }
+}
