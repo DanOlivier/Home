@@ -71,7 +71,7 @@ app.locals.dateHelpers = require('./public/javascripts/dateHelpers');
 app.locals.svg = svg;
 
 // Don't understand routing, just want to be able to load any view I deem fit
-app.get(/^\/(.+)\??/, function(req, res, next) { 
+app.get(/^\/(.+)?\??/, function(req, res, next) { 
 
   var match = /(.{2})(-.{2})?/.exec(req.language)
 
