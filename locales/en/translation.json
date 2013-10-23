@@ -8,7 +8,22 @@
     "month":        "month",
     "month_plural": "months",
     "year":         "year",
-    "year_plural":  "years"
+    "year_plural":  "years",
+    "contactinformation" : "Contact Information",
+    "mainworktitle" : "Senior Software Developer",
+    "montreal": "Montreal, QC",
+    "technicalskills": "Technical skills",
+    "general" : "general"
+  },
+  "tech": {
+    "systems": "Systems, platforms",
+    "languages": "Languages",
+    "libraries": "C++ libraries",
+    "databases": "Databases",
+    "methods": "Methods",
+    "tools": "Tools",
+    "config": "Configuration management",
+    "web": "Web technologies"
   },
   "nav": {
     "home": "Home",

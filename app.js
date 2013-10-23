@@ -9,7 +9,8 @@ var
   nodedump = require('nodedump'),
   moment = require('moment'),
   i18n = require('i18next'),
-  svg = require('./public/javascripts/svg');
+  svg = require('./public/javascripts/svg')
+  JSON = require('JSON');
 
 i18n.init({
   saveMissing: true,
@@ -69,6 +70,8 @@ app.locals.moment = moment;
 app.locals.env = process.env;
 app.locals.dateHelpers = require('./public/javascripts/dateHelpers');
 app.locals.svg = svg;
+app.locals.JSON = JSON
+app.locals.fs = fs
 
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)?\??/, function(req, res, next) { 

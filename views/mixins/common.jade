@@ -1,0 +1,54 @@
+mixin contactInfo(ci)
+  //-label !{JSON.stringify(ci)}
+  section.panel.panel-primary(id=ci.sectionid)
+    .panel-heading
+      h2.panel-title= i18n.t(ci.title)
+    .panel-body
+      table(width="100%")
+        tr: td(colspan=2).name-row= ci.name
+        tr: td(colspan=2).title-row= i18n.t(ci.mainworktitle)
+        tr: td(colspan=2): hr
+        tr
+          td.btn.disabled
+            .glyphicon.glyphicon-2x.glyphicon-home
+          td= i18n.t(ci.location)
+        tr
+          td.btn.disabled
+            .glyphicon.glyphicon-2x.glyphicon-envelope
+          td: a(href="mailto:#{ci.mail}")=  ci.mail
+        tr
+          td.btn.disabled
+            .glyphicon.glyphicon-2x.glyphicon-envelope
+          td: a(href="mailto:#{altmail}")=  ci.altmail
+        tr
+          td.btn.disabled
+            .glyphicon.glyphicon-2x.glyphicon-phone
+          td= ci.phone
+        tr: td(colspan=2): hr
+        tr: td(colspan=2)
+          div
+            a.btn(href="http://twitter.com/idkez")
+              i.fa-icon.fa-icon-twitter.fa-icon-2x
+            a.btn(href="#{ci.linkedin.href}")
+              i.fa-icon.fa-icon-linkedin.fa-icon-2x
+            //-a.btn(href="#{ci.facebook.href}")
+              i.fa-icon.fa-icon-facebook.fa-icon-2x
+            a.btn(href="#{ci.googleplus.href}", rel="publisher")
+              i.fa-icon.fa-icon-google-plus.fa-icon-2x
+            a.btn(href="#{ci.github.href}")
+              i.fa-icon.fa-icon-github.fa-icon-2x
+            a.btn(href="#{ci.skype.href}")
+              i.fa-icon.fa-icon-skype.fa-icon-2x
+    //-.panel-footer
+
+mixin technicalSkills(ts)
+  section.panel.panel-primary(id=ts.sectionid)
+  .panel-heading
+  h2.panel-title Technical skills
+  .panel-body
+  table.table.align-right
+  tbody
+    each skill in skills
+      tr
+        td= skill.name
+        //td= render skill.jade template here

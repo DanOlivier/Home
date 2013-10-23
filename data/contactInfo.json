@@ -1,0 +1,16 @@
+{
+  "sectionid": "contact-information",
+  "title": "app.contactinformation",
+  "name": "Daniel OLIVIER",
+  "mainworktitle": "app.mainworktitle",
+  "location": "app.montreal",
+  "mail": "dan_olivier@hotmail.com",
+  "altmail": "daniel.g.olivier@gmail.com",
+  "tel": "+1-514-415-8595",
+  "twitter": { "href": "http://twitter.com/idkez" },
+  "linkedin": { "href": "http://ca.linkedin.com/pub/dan-olivier/0/4b/40b/" },
+  "facebook": { "href": "http://www.facebook.com/daniel.olivier.526" },
+  "googleplus": { "href": "http://plus.google.com/107802116544821211236?prsrc=3" },
+  "github": { "href": "http://github.com/DanOlivier" },
+  "skype": { "href": "skype:daniel.g.olivier?call&amp;amp;video=true" }  
+}

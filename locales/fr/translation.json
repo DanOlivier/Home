@@ -8,7 +8,22 @@
     "month":        "mois",
     "month_plural": "$t(app.month)",
     "year":         "an",
-    "year_plural":  "ans"
+    "year_plural":  "ans",
+    "contactinformation" : "Coordonnées",
+    "mainworktitle" : "Ingénieur d’Étude et Développement Sénior",
+    "montreal": "Montréal, QC",
+    "technicalskills": "Technical skills",
+    "general" : "général"
+  },
+  "tech": {
+    "systems": "Systèmes, plateformes",
+    "languages": "Langages",
+    "libraries": "Librairies C++",
+    "databases": "Bases de données",
+    "methods": "Méthodologies",
+    "tools": "Outils",
+    "config": "Gestion de configuration",
+    "web" : "Technologies web"
   },
   "nav": {
     "home": "Maison",

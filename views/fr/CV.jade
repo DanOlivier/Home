@@ -1,4 +1,5 @@
 extends ../layout-with-sidebar
+include ../mixins/common
 
 append script
   //- This goes at the end (of rendering), even if it is at the top of this file
@@ -17,46 +18,9 @@ append content2
   //include timestamp
   .row
     .col-md-6
-      section.panel.panel-primary#contact-information
-        .panel-heading
-          h2.panel-title Coordonnées :
-        .panel-body
-          table(width="100%")
-            tr: td(colspan=2).name-row Daniel OLIVIER
-            tr: td(colspan=2).title-row Ingénieur d’Étude et Développement Sénior
-            tr: td(colspan=2): hr
-            tr
-              td.btn.disabled
-                .glyphicon.glyphicon-2x.glyphicon-home
-              td Montréal, QC
-            tr
-              td.btn.disabled
-                .glyphicon.glyphicon-2x.glyphicon-envelope
-              td: a(href="mailto:dan_olivier@hotmail.com")  dan_olivier@hotmail.com
-            tr
-              td.btn.disabled
-                .glyphicon.glyphicon-2x.glyphicon-envelope
-              td: a(href="mailto:daniel.g.olivier@gmail.com")  daniel.g.olivier@gmail.com
-            tr
-              td.btn.disabled
-                .glyphicon.glyphicon-2x.glyphicon-phone
-              td  +1-514-415-8595
-            tr: td(colspan=2): hr
-            tr: td(colspan=2)
-              div
-                a.btn(href="http://twitter.com/idkez")
-                  i.fa-icon.fa-icon-twitter.fa-icon-2x
-                a.btn(href="http://ca.linkedin.com/pub/dan-olivier/0/4b/40b/")
-                  i.fa-icon.fa-icon-linkedin.fa-icon-2x
-                //-a.btn(href="http://www.facebook.com/daniel.olivier.526")
-                  i.fa-icon.fa-icon-facebook.fa-icon-2x
-                a.btn(href="http://plus.google.com/107802116544821211236?prsrc=3" rel="publisher")
-                  i.fa-icon.fa-icon-google-plus.fa-icon-2x
-                a.btn(href="http://github.com/DanOlivier")
-                  i.fa-icon.fa-icon-github.fa-icon-2x
-                a.btn(href="skype:daniel.g.olivier?call&video=true")
-                  i.fa-icon.fa-icon-skype.fa-icon-2x
-        //-.panel-footer
+      //- File offset if from the root, not the current file
+      - var ci = JSON.parse(fs.readFileSync('./data/contactInfo.json', 'utf8'));
+      +contactInfo(ci)
 
   .row
     .col-md-9
@@ -75,78 +39,8 @@ append content2
 
   .row
     .col-md-12
-      section.panel.panel-primary#technical-skills
-        .panel-heading
-          h2.panel-title Compétences techniques :
-        .panel-body
-          table.table.align-right
-            tbody
-              tr
-                td Systèmes, plateformes :
-                td
-                  p Windows (3.1, NT, 2000, XP, Vista, 7), cygwin
-                  p Linux (CentOS, Ubuntu, Red Hat, Fedora, Solaris)
-                  p Divers systèmes propriétaire/embarqué
-              tr
-                td Langages :
-                td
-                  p.indent-second
-                    strong OOP : 
-                    |  C/C++, C#.NET, Delphi, Java
-                  p.indent-second
-                    strong scripting, CLI : 
-                    |  Bash, Python, Perl, Lua, Powershell, SQL
-                  p.indent-second
-                    strong assembleur : 
-                    |  x86, M68K
-              tr
-                td Librairies C++ :
-                td
-                  p.indent-second
-                    strong Général : 
-                    |  STL, Boost, template, Win32, pthreads, Rogue Wave
-                  p.indent-second
-                    strong IHM : 
-                    |  MFC, WxWidgets, Qt, Ilog
-                  p.indent-second
-                    strong Comm : 
-                    a(href="http://code.google.com/p/protobuf/") Protobuf
-                    |, 
-                    a(href="http://www.cs.wustl.edu/~schmidt/ACE.html") Ace/Tao/Corba
-                    |, 
-                    a(href="http://www.boost.org/") Boost 
-                    | (Sérialisation, ASIO)
-                  p.indent-second
-                    strong Graphism : 
-                    a(href="http://www.opengl.org") OpenGL, 
-                    a(href="http://www.openscenegraph.org") OSG (Open Scene Graph)
-                    |, 
-                    a(href="http://www.presagis.com/products_services/products/modeling-simulation/visualization/vega_prime/") VegaPrime
-                    |  + 
-                    a(href="http://www.presagis.com/products_services/products/modeling-simulation/content_creation/creator/") Creator
-                    | (
-                    a(href="http://www.presagis.com/") Multigen/Presagis
-                    |), 
-                    a(href="http://www.vtk.org") VTK
-                  p.indent-second
-                    strong Autres :
-                    |  OpenAL (audio)
-              tr
-                td Bases de données :
-                td Oracle (SQL Developer), Sybase, Toad
-              tr
-                td Méthodologies :
-                td UML, Rational Rose, Design Patterns
-              tr
-                td Outils :
-                td Visual Studio, Eclipse (Java, CDT), NetBeans, Qt Creator
-                  p.indent-second Autres: Debugging Tools for Windows, gdb, Purify, Quantify, BoundsChecker, VTune, valgrind
-              tr
-                td Gestion de configuration :
-                td
-                  p git, CVS, SVN, Clearcase, Clearquest
-                  p make (gmake, cmake, nmake, vcbuild, scons, bjam, gyp)
-                  p TeamCity, github
+      - var ts = require('./data/technicalSkills.js')
+      +technicalSkills(ts)
 
   .row
     .col-md-9
