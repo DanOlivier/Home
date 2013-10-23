@@ -60,13 +60,6 @@ append header
                   //object(data=svgpath, type='image/svg+xml')            
                   img(src=svgpath, type='image/svg+xml')            
 
-.timestamp
-  //- This div will be pushed down, preventing the content from overlapping with the navbar
-  //- why not just?  { padding-top: 40px; }
-  div(style='border: 2px solid red')
-    p= i18n.lng()
-    p= moment().format('LLLL')
-
 append content
   .container
     .row

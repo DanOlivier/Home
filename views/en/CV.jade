@@ -15,7 +15,8 @@ append content2
   title Daniel Olivier - Curriculum Vitae
 
   h1 Curriculum Vitae
-  //include timestamp
+  +timestamp
+
   .row
     .col-md-6
       //- File offset if from the root, not the current file
@@ -39,8 +40,8 @@ append content2
 
   .row
     .col-md-12
-      - var ts = require('./data/technicalSkills.js')
-      +technicalSkills(ts)
+      - var ts = require1('./data/technicalSkills.js')
+      +technicalSkills(ts.technicalSkills)
 
   .row
     .col-md-9

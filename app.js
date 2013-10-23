@@ -1,16 +1,17 @@
-var 
-  express = require('express'),
-  routes = require('./routes'),
-  user = require('./routes/user'),
-  http = require('http'),
-  path = require('path'),
-  fs = require('fs'),
-  util = require('util'),
-  nodedump = require('nodedump'),
-  moment = require('moment'),
-  i18n = require('i18next'),
-  svg = require('./public/javascripts/svg')
-  JSON = require('JSON');
+var express = require('express');
+var routes = require('./routes');
+var user = require('./routes/user');
+var http = require('http');
+var path = require('path');
+var fs = require('fs');
+var util = require('util');
+var nodedump = require('nodedump');
+var moment = require('moment');
+var i18n = require('i18next');
+var JSON = require('JSON');
+var jade = require('jade');
+
+var svg = require('./public/javascripts/svg');
 
 i18n.init({
   saveMissing: true,
@@ -72,6 +73,18 @@ app.locals.dateHelpers = require('./public/javascripts/dateHelpers');
 app.locals.svg = svg;
 app.locals.JSON = JSON
 app.locals.fs = fs
+app.locals.nodedump = nodedump.dump;
+app.locals.jade2 = jade; // Let's hope jade is "re-entrant"
+
+// Both of these work, but which is better?
+app.locals.require1 = require
+
+app.use(function(req, res, next) {
+  res.locals.require2 = require;
+  next();
+});
+
+//var ts = require('./data/technicalSkills.js')
 
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)?\??/, function(req, res, next) { 

@@ -1,3 +1,11 @@
+mixin timestamp
+  //- This div will be pushed down, preventing the content from overlapping with the navbar
+  //- why not just?  { padding-top: 40px; }
+  div(style='border: 2px solid red')
+    p= i18n.lng()
+    p= moment().format('LLLL')
+
+
 mixin contactInfo(ci)
   //-label !{JSON.stringify(ci)}
   section.panel.panel-primary(id=ci.sectionid)
@@ -42,13 +50,23 @@ mixin contactInfo(ci)
     //-.panel-footer
 
 mixin technicalSkills(ts)
+  //-p!= nodedump(jade)
+  //-p!= nodedump(jade_debug)
+  //-p!= nodedump(locals)
+  //-p!= nodedump(this)
+  //-p!= nodedump(jade2)
+
   section.panel.panel-primary(id=ts.sectionid)
-  .panel-heading
-  h2.panel-title Technical skills
-  .panel-body
-  table.table.align-right
-  tbody
-    each skill in skills
-      tr
-        td= skill.name
-        //td= render skill.jade template here
+    .panel-heading
+      h2.panel-title= ts.title
+    .panel-body
+      table.table.align-right
+        tbody
+          each skill in ts.skills
+            tr
+              td= skill.name
+              //- Render skill.jade template here!
+              if skill.content
+                td= skill.content
+              if skill.jade
+                td!= jade2.render(skill.jade)
