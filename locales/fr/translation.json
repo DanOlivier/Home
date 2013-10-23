@@ -13,7 +13,13 @@
     "mainworktitle" : "Ingénieur d’Étude et Développement Sénior",
     "montreal": "Montréal, QC",
     "technicalskills": "Technical skills",
-    "general" : "général"
+    "general" : "général",
+    "education": "Formation",
+    "diploma": "Diplôme d'Ingénieur en Informatique, spécialisation logiciels",
+    "workhistory": "Expériences Professionnelles",
+    "workcolumn1": "Dates, Employeur, Titre",
+    "workcolumn2": "Description des tâches, environment de travail",
+    "techenv": "Environnement technique : "
   },
   "tech": {
     "systems": "Systèmes, plateformes",

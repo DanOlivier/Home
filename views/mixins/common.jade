@@ -70,3 +70,28 @@ mixin technicalSkills(ts)
                 td= skill.content
               if skill.jade
                 td!= jade2.render(skill.jade)
+
+mixin workExperience(we)
+  tr(id=we.workid)
+    td
+      p.time-duration= we.range[0]
+        br
+        |  #{we.range[1]}
+      h3.company-name: a(href=we.href)
+        span= we.shortName
+      if we.longName
+        p= we.longName
+      if we.description
+        p!= we.description
+      if we.business
+        p= we.business
+      p
+        span.glyphicon.glyphicon-home
+        span.location  #{we.location}
+      p: span.title= we.title
+    td
+      block
+      hr
+      p: em= i18n.t('app.techenv')
+      if we.techenv
+      p!= jade2.render(we.techenv)

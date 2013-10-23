@@ -13,7 +13,13 @@
     "mainworktitle" : "Senior Software Developer",
     "montreal": "Montreal, QC",
     "technicalskills": "Technical skills",
-    "general" : "general"
+    "general" : "general",
+    "education": "Education",
+    "diploma": "Computer Engineering, major in software systems",
+    "workhistory": "Work Experience - Employment History",
+    "workcolumn1": "Dates, Employer, Job title",
+    "workcolumn2": "Job description, accomplishments, work environment",
+    "techenv": "Technical environment: "
   },
   "tech": {
     "systems": "Systems, platforms",

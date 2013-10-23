@@ -84,7 +84,9 @@ app.use(function(req, res, next) {
   next();
 });
 
+// Can help to validate changes in these files
 //var ts = require('./data/technicalSkills.js')
+//var ts = require('./data/workExperiences.js')
 
 // Don't understand routing, just want to be able to load any view I deem fit
 app.get(/^\/(.+)?\??/, function(req, res, next) { 
