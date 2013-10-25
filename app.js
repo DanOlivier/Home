@@ -75,7 +75,7 @@ app.get(/^\/(.+)?\??/, function(req, res, next) {
 
   var match = /(.{2})(-.{2})?/.exec(req.language)
 
-  var filename = (req.params[0] || "index") + '.jade';
+  var filename = (req.params[0] || "CV") + '.jade';
   var file = path.join(__dirname, 'views', match[1], filename);
   if(!fs.existsSync(file)) {
     file = path.join(__dirname, 'views', filename);
