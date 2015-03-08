@@ -84,38 +84,46 @@ append content2
               tr
                 td Systems, platforms:
                 td
-                  p Windows (3.1, NT, 2000, XP, Vista, 7), cygwin
-                  p Linux (CentOS, Ubuntu, Red Hat, Fedora, Solaris)
+                  p Windows (8, 7, Vista, etc), cygwin
+                  p Linux (OpenSuse, Ubuntu, CentOS, Red Hat, Fedora, Solaris)
                   p Various custom/proprietary, embedded systems
               tr
                 td Langages:
                 td
                   p.indent-second
                     strong OOP: 
-                    |  C/C++, C#.NET, Delphi, Java
+                    |  C/C++, C#.NET, Java, Delphi
                   p.indent-second
                     strong scripting, CLI: 
-                    |  Bash, Python, Perl, Lua, Power Shell, SQL
+                    |  Bash, gmake, Python, Perl, Lua, Power Shell, SQL
                   p.indent-second
                     strong assembler: 
                     |  x86, M68K
+              tr
+                td Dev Tools:
+                td
+                  p Visual Studio, Sublime Text, Qt Creator, Eclipse (Java, CDT)
+                  p.indent-second Others: wingdb, gdb, VTune, valgrind, Purify, Quantify, BoundsChecker
               tr
                 td C++ libraries:
                 td
                   p.indent-second
                     strong General: 
-                    |  STL, Boost, template, Win32, pthreads, Rogue Wave
+                    |  STL, 
+                    a(href="http://www.boost.org/") Boost
+                    |, 
+                    a(href="http://www.http://pocoproject.org/") Poco
+                    |, Win32, pthreads, Rogue Wave
                   p.indent-second
                     strong GUI: 
-                    |  MFC, WxWidgets, Qt, Ilog
+                    |  WxWidgets, Qt, MFC
                   p.indent-second
                     strong Comm : 
                     a(href="http://code.google.com/p/protobuf/") Protobuf
                     |, 
                     a(href="http://www.cs.wustl.edu/~schmidt/ACE.html") Ace/Tao/Corba
                     |, 
-                    a(href="http://www.boost.org/") Boost 
-                    |  (Serialisation, ASIO)
+                    a(href="http://www.boost.org/") Boost (Serialisation, ASIO)
                   p.indent-second
                     strong Graphics: 
                     a(href="http://www.opengl.org") OpenGL, 
@@ -138,15 +146,24 @@ append content2
                 td Methods:
                 td UML, Rational Rose, Design Patterns
               tr
-                td Tools:
-                td Visual Studio, Eclipse (Java, CDT), NetBeans, Qt Creator
-                  p.indent-second Others: Debugging Tools for Windows, gdb, Purify, Quantify, BoundsChecker, VTune, valgrind
-              tr
                 td Configuration management:
                 td
-                  p git, CVS, SVN, Clearcase, Clearquest
-                  p make (gmake, cmake, nmake, vcbuild, scons, bjam, gyp),
-                  p TeamCity, github
+                  p git, legacy (CVS, SVN, Clearcase, Clearquest)
+                  p gmake, cmake, autotools (+ nmake, vcbuild, scons, bjam, gyp, Android build, grunt),
+                  p Jenkins, JIRA, Gerrit, TeamCity, github
+              tr
+                td Web development:
+                td
+                  p HTML, CSS, 
+                    a(href="https://nodejs.org/") Node.js
+                    |, 
+                    a(href="http://expressjs.com/") express.js
+                    |, 
+                    a(href="http://jade-lang.com/") jade.js
+                    |, 
+                    a(href="http://lesscss.org/") less.js
+                    |, 
+                    a(href="http://getbootstrap.com/") Bootstrap
 
   .row
     .col-md-9
@@ -174,58 +191,151 @@ append content2
                 th.col-md-2 Dates, Employer, Job title
                 th.col-md-8 Job description, accomplishments, work environment
             tbody
+
+              // -----------------------------------------------------------------------------------
+              tr#ericsson
+                td
+                  p.time-duration= dateHelpers.dateHelper([2014, 03]) + ' - ' + "present"
+                  h3.company-name: a(href="http://www.ericsson.com/")
+                    span.short-name Ericsson
+                  p
+                    span.icon-map-marker.icon-large
+                    span.location  Montreal, Quebec
+                  p: span.title Senior C++ software developer
+                td
+                  h4 Trace project:
+                  p Trace integrates the chosen tracing software (3rd-party provider 
+                    a(href="http://lttng.org/") LTTNg
+                    |)
+                    | into the rest of the Ericsson architecture (or component offering):
+                    ul
+                      li making it available to software developers working with the Ericsson software stack, and
+                      li simplifying deployment and activation for developers, users and operators. 
+                  p The resulting traces provide cluster-wide visibility of application events and operations in a production setting.
+
+                  p Duties: 
+                  ul
+                    li development of new features, 
+                    li ensuring stability of test jobs, 
+                    li observing and maintaining performance, in particular under saturated or overloaded conditions (CPU, memory, network, IO).
+
+                  hr
+                  h4 LM (Licence Manager) project:
+                  p LM ensures license control of Ericsson applications at customer sites. 
+                  p Our current assignment is to develop and integrate a new back-end (Sentinel Cloud) into the licensing infrastructure. 
+                  p Contributions: 
+                  ul
+                    li refactoring build, packaging and deployment scripts
+                    li partitioning the software to isolate the new licensing back-end from the rest of the product.
+
+                  hr
+                  p: em Technical environment:
+                  ul
+                    li
+                      strong hardware: 
+                      | GEP-3, GEP-5 (multi-core, Xeon-based, Generic Ericsson Processor blades), Xen virtualisation
+                    li
+                      strong Linux: 
+                      | LDE (Linux Distribution Extension), LOTC (Linux Open Telecom Cluster), 
+                      a(href="https://www.suse.com/products/server/") SLES 
+                      | (SUSE Linux Enterprise Server), 
+                      a(href="https://www.opensuse.org/") OpenSuse
+                      |, 
+                      a(href="http://drbd.linbit.com/") DRBD
+                    li C++, Java, Linux tool suite (bash, gmake, cmake, autotools, perl, awk, sed, RPM, etc), 
+                    li
+                      strong Build pipeline: 
+                      a(href="http://jenkins-ci.org/") Jenkins
+                      | (continuous integration), 
+                      a(href="https://code.google.com/p/gerrit/") Gerrit 
+                      | (code review), 
+                      a(href="https://www.atlassian.com/software/jira") JIRA 
+                      | (issue and project tracking)
+                    li
+                      strong C++: 
+                      a(href="http://www.opensaf.org/") OpenSAF 
+                      | (high-availability framework), 
+                      a(href="http://lttng.org/") LTTNg
+                      |, 
+                      a(href="http://www.http://pocoproject.org") Poco
+                      |, MAF (Middleware-Agnostic Framework), 
+                      a(href="https://code.google.com/p/googletest/") Google Test
+                    li
+                      strong licensing: 
+                      a(href="http://www.safenet-inc.com/software-monetization/sentinel-rms/") Sentinel RMS
+                      |, 
+                      a(href="http://www.sentinelcloud.com/") Sentinel Cloud
+                    li
+                      strong Overload testing: 
+                      | perf, sar, stress, 
+                      a(href="http://www.brendangregg.com/linuxperf.html") Linux Performance Observability Tools
+                      |, 
+                      a(href="http://projects.eclipse.org/projects/tools.tracecompass") Trace Compass
+                    li
+                      strong Additional context: 
+                      | clustering, availability/resilience, distributed systems
+
+              // -----------------------------------------------------------------------------------
               tr#sgcib
                 td
-                  p.time-duration= dateHelpers.dateHelper2([2011, 07], [2012, 12])
+                  p.time-duration= dateHelpers.dateHelper2([2011, 07], [2013, 04])
                   h3.company-name: a(href="http://www.sgcib.com/")
                     span.short-name SGCIB
-                  |  (Société Générale, Corporate Investment Bank)
+                  |  Société Générale, Corporate Investment Bank
                   p
                     span.icon-map-marker.icon-large
                     span.location  Paris, France
                   p: span.title Ingénieur Étude et développement C++
                 td
                   p Development, maintenance, optimization and support of the primary risk analysis application covering derivative financial products
-                  ul
-                    li Maintenance and development of the (Gigaspace) cache support system (market data + static data) :
-                    ul
-                      li Incorporation of new fields and structures into cache schema, and supporting changes in the code (C++, Java, C#), ensuring backwards and forward compatibility
-                      li Maintenance and evolution of the changes to configuration management.
-                      |  i.e. compile Gigaspace in debug mode, allowing for the deployment into the developer environment (and ensuring symmetry between developer, testing and production environments)
-                      li Deployment of cache proxy onto testing and development compute grids
-                      li Production debugging (remote desktop, remote debug, WMI, Powershell) + crash dump capture and analysis
-                      li Study and use of surveillance applications, grid management, and distributed computation frameworks (internal and OTS)
-                      li Assessment of feasibility of cache invalidation notifications (emanating from a DB service)
-                      li Developer support
 
-                    li Development of a C++ LoadService (specialized DB front-end service) :
-                    ul
-                      li Development of a generic “access module” (to hide the details of our use of Google protobuf packets and library)
-                      li Census of all target database (common market and static data) entry points and conversion to new LoadService interface
-                      li Connection management and optimization (socket lifecycle)
-                      li Adaptation of LoadService to a second target DB, and extending the flexibility of the protocol and the supported types (i.e. input vectors)
-                      li Migration of hardcoded SQL queries to stored procedures
-                      li Massive legacy code refactoring. Suppression of 150 KLOC (over 1.5 MLOC initial)
-                      li Support, diagnoses, bug management
-                      li Validation of results (DB queries) through instrumentation of access functions (and use of Boost serialization to produce reports)
-                      li Reconciliation of divergent reports
-                      li Unit and performance tests
-                      li Developer support
-                      li Results : impact on database divided by 5
+                  hr
+                  p Maintenance and development of the (Gigaspace) cache support system (market data + static data) :
+                  ul
+                    li Incorporation of new fields and structures into cache schema, and supporting changes in the code (C++, Java, C#), ensuring backwards and forward compatibility
+                    li Maintenance and evolution of the changes to configuration management.
+                    |  i.e. compile Gigaspace in debug mode, allowing for the deployment into the developer environment (and ensuring symmetry between developer, testing and production environments)
+                    li Deployment of cache proxy onto testing and development compute grids
+                    li Production debugging (remote desktop, remote debug, WMI, Powershell) + crash dump capture and analysis
+                    li Study and use of surveillance applications, grid management, and distributed computation frameworks (internal and OTS)
+                    li Assessment of feasibility of cache invalidation notifications (emanating from a DB service)
+                    li Developer support
+
+                  hr
+                  p Development of a C++ LoadService (specialized DB front-end service) :
+                  ul
+                    li Development of a generic “access module” (to hide the details of our use of Google protobuf packets and library)
+                    li Census of all target database (common market and static data) entry points and conversion to new LoadService interface
+                    li Connection management and optimization (socket lifecycle)
+                    li Adaptation of LoadService to a second target DB, and extending the flexibility of the protocol and the supported types (i.e. input vectors)
+                    li Migration of hardcoded SQL queries to stored procedures
+                    li Massive legacy code refactoring. Suppression of 150 KLOC (over 1.5 MLOC initial)
+                    li Support, diagnoses, bug management
+                    li Validation of results (DB queries) through instrumentation of access functions (and use of Boost serialization to produce reports)
+                    li Reconciliation of divergent reports
+                    li Unit and performance tests
+                    li Developer support
+                    li Results : impact on database divided by 5
+
                   hr
                   p: em Technical environment:
                   ul
                     li C++ (VS 2008, 2010), C++/CLI, C# .Net, Java
-                    li Boost, Rogue Wave, Xerces XML, OCI (Oracle Call Interface) + OCCI, Google Protobuf, Log4Net, JNI
-                    li
-                      a(href="http://www.doxygen.org") DOxygen
+                    li Boost, Rogue Wave, Xerces XML, 
+                      a(href="http://www.oracle.com/technetwork/database/features/oci") OCI (Oracle Call Interface) + OCCI
                       |, 
+                      a(href="https://code.google.com/p/protobuf/") Google Protobuf
+                      |, Log4Net, JNI
+                    li
                       a(href="http://git-scm.com") Git
                       |, 
-                      a(href="http://www.platform.com/Products/platform-symphony") Symphony
-                      |, 
-                      a(href="http://www.gigaspaces.com/") Gigaspaces
+                      a(href="http://www.platform.com/Products/platform-symphony") Symphony 
+                      | (grid management), 
+                      a(href="http://www.gigaspaces.com/") Gigaspaces 
+                      | (cache provider), 
+                      a(href="http://www.doxygen.org") DOxygen
 
+              // -----------------------------------------------------------------------------------
               tr#ifcs
                 td
                   p.time-duration= dateHelpers.dateHelper2([2010, 02], [2011, 03])
@@ -254,6 +364,7 @@ append content2
                     em Technical environment:
                     |  Visual C++, wxWidgets, VTK (graphics engine)
 
+              // -----------------------------------------------------------------------------------
               tr#cmlabs
                 td
                   p.time-duration= dateHelpers.dateHelper2([2004, 09], [2009, 08])
@@ -262,7 +373,8 @@ append content2
                   p
                     span.icon-map-marker.icon-large
                     span.location  Montreal, QC
-                  p: span.title Senior Software Developer C++, build automation + release engineer
+                  p: span.title Senior Software Developer C++, 
+                  | build automation + release engineer
 
                 td
                   p The Vortex C++ SDK is a software library intended for mechanical simulation and is subdivided into the following categories or problems domains:
@@ -280,6 +392,7 @@ append content2
                       li Virtools, etc.
                     li Support modules: i.e. persistence, data-flow programming, encryption/decryption of resources
 
+                  hr
                   p Developed and maintained the Vortex library and supporting framework:
                   ul
                     li entire development life-cycle : analysis, architecture, development, re-factoring, debugging, and support (internal or external/client)
@@ -287,6 +400,7 @@ append content2
                     li developed and enhanced SDK samples/tutorials (all categories), user documentation
                     li persistence + physics file format (using Boost)
 
+                  hr
                   p Crane simulator prototypes (mobile, tower), software development, initial productization and support:
                   ul
                     li graphics (tuning, debugging, frame rate, shadows),
@@ -301,6 +415,7 @@ append content2
                     li hardware inventory, assembly, machine installation/management,
                     li on-site field support
 
+                  hr
                   p Maintain and extend the build system, which includes:
                   ul
                     li configuration management, source control
@@ -314,6 +429,7 @@ append content2
                   ul
                     li DRDC project (Gaming Tools and Serious Games survey)
 
+              // -----------------------------------------------------------------------------------
               tr#timespring
                 td
                   p.time-duration= dateHelpers.dateHelper2([2003, 06], [2003, 11])
@@ -336,9 +452,10 @@ append content2
                     li Installation/deployment module (SCM, C++)
                   hr
                   p: em Technical environment:
-                  |  C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs)
+                  p C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs)
                   p File-system drivers: DDK, SoftICE
 
+              // -----------------------------------------------------------------------------------
               tr#visualmed
                 td
                   p.time-duration= dateHelpers.dateHelper2([2002, 04], [2003, 04])
@@ -352,20 +469,21 @@ append content2
                   ul
                     li Development, developer support, configuration management
                     li Analysis and debugging, developer support (30+ developers), software build procedure (including deployment), integration and regression testing
-                    li Special projects:
-                    ul
-                      li Translation management infrastructure (studio and runtime)
-                      li Citrix compatibility with fingerprint scanning peripheral device (virtual channel driver)
+                  p Special projects:
+                  ul
+                    li Translation management infrastructure (studio and runtime)
+                    li Citrix compatibility with fingerprint scanning peripheral device (virtual channel driver)
                   hr
                   p: em Technical environment:
-                  |  Delphi v6, COM+, Oracle, Toad, VC7, Wise, Express QuantumGrid
+                  p Delphi v6, COM+, Oracle, Toad, VC7, Wise, Express QuantumGrid
 
+              // -----------------------------------------------------------------------------------
               tr#rational
                 td
                   p.time-duration= dateHelpers.dateHelper2([2000, 08], [2001, 07])
                   h3.company-name: a(href="http://www.ibm.com/software/products/us/en/ratirosefami") Rational Software 
                   p (Rose Business Unit)
-                  p: span.company-business (Visual software modeling and design tools)
+                  p: span.company-business Visual software modeling and design tools (UML)
                   p
                     span.icon-map-marker.icon-large
                     span.location  Redmond, WA (USA)
@@ -378,9 +496,10 @@ append content2
                     li Performance analysis
                   hr
                   p: em Technical environment:
-                  |  Rose, UML, XDE, ClearCase, ClearQuest
+                  p Rose, UML, XDE, ClearCase, ClearQuest
                   p MSDev 6, Visual Studio 7, VB, COM (MIDL), Perl (ActiveState), Websphere Studio, Visual J++, Jbuilder, JSDK, JIntegra, cygwin
 
+              // -----------------------------------------------------------------------------------
               tr#microsoft
                 td
                   p.time-duration= dateHelpers.dateHelper2([1999, 07], [2000, 07])
@@ -400,9 +519,11 @@ append content2
                     li Kernel/Base (Win32 API category) developer support
                   hr
                   p: em Technical environment
-                  |  Debuggers: VC6, Windbg (cdb, ntsd, kd), Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking)
-                  p Full range of Microsoft development tools: VC6, VC7, Win32, Platform SDK, RAID (bug management), SourceDepot (source code control), build process
+                  p Debuggers: VC6, Windbg (cdb, ntsd, kd), Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking)
+                  p Microsoft development tools: VC6, VC7, Win32, Platform SDK
+                  p RAID (bug management), SourceDepot (source code control), build process
 
+              // -----------------------------------------------------------------------------------
               tr#srtelecom
                 td
                   p.time-duration= dateHelpers.dateHelper2([1997, 03], [1999, 06])
@@ -415,28 +536,34 @@ append content2
                 td
                   ul
                     li Design and implementation of a network management system
-                    li PC Workstation environment (Visual C++, Win32, MFC, STL, Corba, ACE,OOP, patterns)
                     li Design, development and unit testing of client (marshaling, distributed networking)
                     li Maintenance of communication server (bridge)
                     li Evaluation of development tools and operating environments
                     li Research into ITU network management standards and distributed systems (TMN, CORBA, JIDM)
-                    li Maintenance/development of the communication sub-system of the SR-500 system (custom embedded OS) : Borland C++ tools, Checkmate ICE, UART
+                    li Maintenance/development of the communication sub-system of the SR-500 system (custom embedded OS)
                     li Technical lead for control panel (Compact Central Station) : Microchip PIC processor supported by simple C++/MFC application
+                  hr
+                  p: em Technical environment
+                  p Visual C++, Win32, MFC, STL, Corba, ACE, OOP, design patterns, TMN, JIDM
+                  p Embedded: Borland C++, Checkmate ICE, Microchip PIC, UART
 
+              // -----------------------------------------------------------------------------------
               tr#lansertech
                 td
                   p.time-duration= dateHelpers.dateHelper2([1996, 07], [1997, 02])
                   h3.company-name Lanser Technologies
+                  p: span.company-business Narrowband wireless local loop bypass network 
+                    | <br>(POS transactions, automated meter reading, alarm systems, etc.)
                   p
                     span.icon-map-marker.icon-large
                     span.location  Westmount, QC
                 td
-                  p Narrowband wireless local loop bypass network (POS transactions, automated meter reading, alarm systems, etc.)
                   p Software maintenance and testing of network management protocol conversion application (proxy agent)
                   hr
                   p: em Technical environment:
-                  |  C/C++, QNX, Solaris, Sparcworks, SunNet Manager
+                  p C/C++, Sun/Solaris, Sparcworks, SunNet Manager
 
+              // -----------------------------------------------------------------------------------
               tr#nbstech
                 td
                   p.time-duration= dateHelpers.dateHelper2([1993, 11], [1996, 07])
@@ -457,13 +584,13 @@ append content2
                     li Design and implementation of a class library (OOP) for client/server communications
                   hr
                   p: em Technical environment:
-                  |  C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
+                  p C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
 
+              // -----------------------------------------------------------------------------------
               tr#ste-justine
                 td
                   p.time-duration Summer 1992
-                  h3.company-name
-                      a(href="http://www.kinesio.umontreal.ca/autres_pages/st_justine.htm") Hôpital Sainte-Justine
+                  h3.company-name: a(href="http://www.kinesio.umontreal.ca/autres_pages/st_justine.htm") Hôpital Sainte-Justine
                   p Laboratoire d’Étude du Mouvement
                   p: span.company-business (Kinesiology, gait analysis, prosthetics)
                   p
@@ -474,7 +601,7 @@ append content2
                   p Design, implementation and optimization of a program to visualize the 3-D rendering of the human spine in motion
                   hr
                   p: em Technical environment:
-                  |  C, Xlib, Sun workstations, XWindows
+                  p C, Xlib, Sun workstations, XWindows
 
   .row
     .col-md-6

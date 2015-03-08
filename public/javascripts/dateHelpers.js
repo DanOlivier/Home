@@ -42,7 +42,7 @@ module.exports = {
     var d = new Duration(begin, end)
 
     var ym = this.calcDuration(d, precise)
-    return this.formatDurationSpan(d) + ' ' + this.formatDuration(ym);
+    return this.formatDurationSpan(d);// + ' ' + this.formatDuration(ym);
   },
   formatDuration: function(ym) {
     var y = ym[0], m = ym[1];

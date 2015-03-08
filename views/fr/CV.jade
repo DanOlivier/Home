@@ -84,38 +84,46 @@ append content2
               tr
                 td Systèmes, plateformes :
                 td
-                  p Windows (3.1, NT, 2000, XP, Vista, 7), cygwin
-                  p Linux (CentOS, Ubuntu, Red Hat, Fedora, Solaris)
+                  p Windows (8, 7, Vista, etc), cygwin
+                  p Linux (OpenSuse, Ubuntu, CentOS, Red Hat, Fedora, Solaris)
                   p Divers systèmes propriétaire/embarqué
               tr
                 td Langages :
                 td
                   p.indent-second
                     strong OOP : 
-                    |  C/C++, C#.NET, Delphi, Java
+                    |  C/C++, C#.NET, Java, Delphi
                   p.indent-second
                     strong scripting, CLI : 
-                    |  Bash, Python, Perl, Lua, Powershell, SQL
+                    |  Bash, gmake, Python, Perl, Lua, Power Shell, SQL
                   p.indent-second
                     strong assembleur : 
                     |  x86, M68K
+              tr
+                td Outils de développement:
+                td
+                  p Visual Studio, Sublime Text, Qt Creator, Eclipse (Java, CDT)
+                  p.indent-second Autres: wingdb, gdb, VTune, valgrind, Purify, Quantify, BoundsChecker
               tr
                 td Librairies C++ :
                 td
                   p.indent-second
                     strong Général : 
-                    |  STL, Boost, template, Win32, pthreads, Rogue Wave
+                    |  STL, 
+                    a(href="http://www.boost.org/") Boost
+                    |, 
+                    a(href="http://www.http://pocoproject.org/") Poco
+                    |, Win32, pthreads, Rogue Wave
                   p.indent-second
                     strong IHM : 
-                    |  MFC, WxWidgets, Qt, Ilog
+                    |  WxWidgets, Qt, MFC, Ilog
                   p.indent-second
                     strong Comm : 
                     a(href="http://code.google.com/p/protobuf/") Protobuf
                     |, 
                     a(href="http://www.cs.wustl.edu/~schmidt/ACE.html") Ace/Tao/Corba
                     |, 
-                    a(href="http://www.boost.org/") Boost 
-                    | (Sérialisation, ASIO)
+                    a(href="http://www.boost.org/") Boost (Serialisation, ASIO)
                   p.indent-second
                     strong Graphism : 
                     a(href="http://www.opengl.org") OpenGL, 
@@ -138,15 +146,24 @@ append content2
                 td Méthodologies :
                 td UML, Rational Rose, Design Patterns
               tr
-                td Outils :
-                td Visual Studio, Eclipse (Java, CDT), NetBeans, Qt Creator
-                  p.indent-second Autres: Debugging Tools for Windows, gdb, Purify, Quantify, BoundsChecker, VTune, valgrind
-              tr
                 td Gestion de configuration :
                 td
-                  p git, CVS, SVN, Clearcase, Clearquest
-                  p make (gmake, cmake, nmake, vcbuild, scons, bjam, gyp)
-                  p TeamCity, github
+                  p git et autres (CVS, SVN, Clearcase, Clearquest)
+                  p gmake, cmake, autotools (+ nmake, vcbuild, scons, bjam, gyp, Android build, grunt),
+                  p Jenkins, JIRA, Gerrit, TeamCity, github
+              tr
+                td Dévelopment Web:
+                td
+                  p HTML, CSS, 
+                    a(href="https://nodejs.org/") Node.js
+                    |, 
+                    a(href="http://expressjs.com/") express.js
+                    |, 
+                    a(href="http://jade-lang.com/") jade.js
+                    |, 
+                    a(href="http://lesscss.org/") less.js
+                    |, 
+                    a(href="http://getbootstrap.com/") Bootstrap
 
   .row
     .col-md-9
@@ -174,60 +191,71 @@ append content2
                 th.col-md-2 Dates, Employeur, Titre
                 th.col-md-8 Description des tâches, environment de travail
             tbody
-              tr#sgcib-work
+
+              // -----------------------------------------------------------------------------------
+              tr#sgcib
                 td
-                  p.time-duration= dateHelpers.dateHelper2([2011, 07], [2012, 12])
-                  h3.company-name: a(href="http://www.sgcib.com/") SGCIB
-                  p (Société Générale, Corporate Investment Bank)
+                  p.time-duration= dateHelpers.dateHelper2([2011, 07], [2013, 04])
+                  h3.company-name: a(href="http://www.sgcib.com/")
+                    span.short-name SGCIB
+                  | Société Générale, Corporate Investment Bank
                   p
                     span.icon-map-marker.icon-large
                     span.location  Paris, France
                   p: span.title Ingénieur Étude et développement C++
                 td
                   p Développement et optimisation en C++ d’une application distribuée d’analyse et de calcul de risque à destination des dérivés de taux
+                  
+                  hr
+                  p Évolution du mode de caching des données (Market/Static data):
                   ul
-                    li Évolution du mode de caching des données (Market/Static data):
-                    ul
-                      li Intégration de nouvelles structures/nouveaux champs au schéma du cache
-                      li Évolution et optimisation de la gestion de la configuration
-                      li Modification de l’interface de Gigaspace en Java, C# et C++ pour assurer la rétrocompatibilité
-                      li Recompilation du module d’accès C++ de Gigaspace en mode débug
-                      li Déploiement d’un CacheProxy sur chaque nœud de la grille
-                      li Debug en production (remote desktop sur grille de calcul, et/ou remote debug)
-                      li Saisie et analyse de dumps mémoire et rapports de crash
-                      li Étude des mécanismes de surveillance/gestion de la grille, d’outils de calcul distribués (Symphony, sites web internes)
-                      li Support aux développeurs
+                    li Intégration de nouvelles structures/nouveaux champs au schéma du cache
+                    li Évolution et optimisation de la gestion de la configuration
+                    li Modification de l’interface de Gigaspace en Java, C# et C++ pour assurer la rétrocompatibilité
+                    li Recompilation du module d’accès C++ de Gigaspace en mode débug
+                    li Déploiement d’un CacheProxy sur chaque nœud de la grille
+                    li Debug en production (remote desktop sur grille de calcul, et/ou remote debug)
+                    li Saisie et analyse de dumps mémoire et rapports de crash
+                    li Étude des mécanismes de surveillance/gestion de la grille, d’outils de calcul distribués (Symphony, sites web internes)
+                    li Support aux développeurs
 
-                    li Développement d’un LoadService en C++ :
-                    ul
-                      li Développement d’un module générique d’accès au LoadService pour cacher les détails du code protobuf
-                      li Recensement des appels à la BD cible
-                      li Conversion des appels à la nouvelle interface C++
-                      li Optimisation des connexions
-                      li Adaptation du LoadService auprès d’une seconde BD cible
-                      li Développement de nouvelles fonctionnalités en C++ (extension du système de types, …)
-                      li Migration des requêtes SQL vers des procédures stockées côté-base
-                      li Refactoring de code
-                      li Traitement des anomalies
-                      li Définition de rapports d’exécution via Boost Serialisation
-                      li Réconciliation des divergences des résultats par rapport à la version de référence
-                      li Réalisation de tests (unitaires/ performance)
-                      li Support aux développeurs
-                      li Charge sur la BD divisée par 5 ; suppression de 130 KLOC (sur un total de 1.5 MLOC)
+                  hr
+                  p Développement d’un LoadService en C++ :
+                  ul
+                    li Développement d’un module générique d’accès au LoadService pour cacher les détails du code protobuf
+                    li Recensement des appels à la BD cible
+                    li Conversion des appels à la nouvelle interface C++
+                    li Optimisation des connexions
+                    li Adaptation du LoadService auprès d’une seconde BD cible
+                    li Développement de nouvelles fonctionnalités en C++ (extension du système de types, …)
+                    li Migration des requêtes SQL vers des procédures stockées côté-base
+                    li Refactoring de code
+                    li Traitement des anomalies
+                    li Définition de rapports d’exécution via Boost Serialisation
+                    li Réconciliation des divergences des résultats par rapport à la version de référence
+                    li Réalisation de tests (unitaires/ performance)
+                    li Support aux développeurs
+                    li Charge sur la BD divisée par 5 ; suppression de 130 KLOC (sur un total de 1.5 MLOC)
+
                   hr
                   p: em Environnement technique :
                   ul
                     li C++ (VS 2008, 2010), C++/CLI, C# .Net, Java
-                    li Boost, Rogue Wave, Xerces XML, OCI (Oracle Call Interface) + OCCI, Google Protobuf, Log4Net, JNI
-                    li
-                      a(href="http://www.doxygen.org") DOxygen
+                    li Boost, Rogue Wave, Xerces XML, 
+                      a(href="http://www.oracle.com/technetwork/database/features/oci") OCI (Oracle Call Interface) + OCCI
                       |, 
+                      a(href="https://code.google.com/p/protobuf/") Google Protobuf
+                      |, Log4Net, JNI
+                    li
                       a(href="http://git-scm.com") Git
                       |, 
                       a(href="http://www.platform.com/Products/platform-symphony") Symphony
-                      |, 
+                      | (gestion grille de calcul), 
                       a(href="http://www.gigaspaces.com/") Gigaspaces
+                      | (antémémoire), 
+                      a(href="http://www.doxygen.org") DOxygen
 
+              // -----------------------------------------------------------------------------------
               tr#ifcs
                 td
                   p.time-duration= dateHelpers.dateHelper2([2010, 02], [2011, 03])
@@ -238,25 +266,25 @@ append content2
                     span.location  Paris, France
                   p: span.title Ingénieur Étude et développement C++
                 td
-                  h5 Projet 
+                  h4
                     span.company-name
                       a(href="http://www.tech-advantage.com/") Tech'Advantage
                       |, filiale de l'
                       a(href="http://www.ifp-school.com/") IFP (Institut Français du Pétrole)
                     |  :
                   p Développement et optimisation (structure applicative et IHM) d'un logiciel d'inversion sismique (modélisation lithosphérique)
-                  p
-                    em Environnement technique :
-                    |  Linux (RH9, EL5), C++ (Eclipse + CDT), Ilog Views + librairies internes
+                  p: em Environnement technique :
+                  p Linux (RH9, EL5), C++ (Eclipse + CDT), Ilog Views + librairies internes
+
                   hr
-                  h5 Projet 
+                  h4
                     span.company-name: a(href="http://www.carestreamdental.com/") Trophy
                     |  :
                   p Développement et optimisation d’une application en visualisation d’imagerie médicale (dentaire)
-                  p
-                    em Environnement technique :
-                    |  Visual C++, wxWidgets, VTK (moteur graphique)
+                  p: em Environnement technique :
+                  p Visual C++, wxWidgets, VTK (moteur graphique)
 
+              // -----------------------------------------------------------------------------------
               tr#cmlabs
                 td
                   p.time-duration= dateHelpers.dateHelper2([2004, 09], [2009, 08])
@@ -268,43 +296,50 @@ append content2
 
                 td
                   p Étude, développement et optimisation de la librairie Vortex – SDK en C++ permettant d’effectuer des simulations physiques (mécaniques) complexes
+                  
+                  hr
+                  p Développement du moteur de simulation (C++, STL) et élaboration des scénarios de simulation
                   ul
-                    li Développement du moteur de simulation (C++, STL) et élaboration des scénarios de simulation
+                    li Ajout de nouveaux types d’équipement
+                    li Optimisation du multithreading
+                    li Développement des librairies de capteurs artificiels
                       ul
-                        li Ajout de nouveaux types d’équipement
-                        li Optimisation du multithreading
-                        li Développement des librairies de capteurs artificiels
-                          ul
-                            li Refactoring des modules existants
-                            li Définition d’une nouvelle architecture
-                            li Développement en C++ d’un sonar et d’une depth camera
-                        li Utilisation de Boost (serialization) pour introduire la notion de persistance
-                        li Utilisation des design patterns pour étendre les fonctionnalités de la librairie
-                        li Optimisation des moteurs graphiques via les librairies OSG et VegaPrime
-                          ul
-                            li Amélioration de la qualité du rendu graphique
-                            li Composition de scènes de simulation
-                    li Développement de prototypes de simulateurs de grues
+                        li Refactoring des modules existants
+                        li Définition d’une nouvelle architecture
+                        li Développement en C++ d’un sonar et d’une depth camera
+                    li Utilisation de Boost (serialization) pour introduire la notion de persistance
+                    li Utilisation des design patterns pour étendre les fonctionnalités de la librairie
+                    li Optimisation des moteurs graphiques via les librairies OSG et VegaPrime
                       ul
-                        li Élaboration des scénarios de simulation et paramétrage des équipements
-                        li Implémentation couche réseautage (via mémoire partagée 
-                          a(href="http://diverse.sourceforge.net/diverse/") DTK
-                          |), permettant de distribuer la charge de calcul du simulateur
-                        li Conception d'IHMs (WxWidgets, Qt)
-                        li Ajout d’un module d’interfaçage de périphérique (
-                          a(href="http://www.ni.com/data-acquisition/") NI-DAQ
-                          |), head-tracker (
-                          a(href="http://www.ascension-tech.com/realtime/rtflockofbirds.php") Flock of Birds
-                          |)
-                    li Responsable de la gestion de configuration
-                      ul
-                        li Gestion des codes sources
-                        li Maintenance des scripts (multi-plateforme) d’automatisation et d'intégration
-                        li Support technique
+                        li Amélioration de la qualité du rendu graphique
+                        li Composition de scènes de simulation
+
+                  hr
+                  p Développement de prototypes de simulateurs de grues
+                  ul
+                    li Élaboration des scénarios de simulation et paramétrage des équipements
+                    li Implémentation couche réseautage (via mémoire partagée 
+                      a(href="http://diverse.sourceforge.net/diverse/") DTK
+                      |), permettant de distribuer la charge de calcul du simulateur
+                    li Conception d'IHMs (WxWidgets, Qt)
+                    li Ajout d’un module d’interfaçage de périphérique (
+                      a(href="http://www.ni.com/data-acquisition/") NI-DAQ
+                      |), head-tracker (
+                      a(href="http://www.ascension-tech.com/realtime/rtflockofbirds.php") Flock of Birds
+                      |)
+                  
+                  hr
+                  p Responsable de la gestion de configuration
+                  ul
+                    li Gestion des codes sources
+                    li Maintenance des scripts (multi-plateforme) d’automatisation et d'intégration
+                    li Support technique
+
                   hr
                   p: em Environnement technique :
-                  |  C++, Linux, Windows, cygwin, Qt, wxWidgets, Lua, tolua++
+                  p C++, Linux, Windows, cygwin, Qt, wxWidgets, Lua, tolua++
 
+              // -----------------------------------------------------------------------------------
               tr#timespring
                 td
                   p.time-duration= dateHelpers.dateHelper2([2003, 06], [2003, 11])
@@ -324,19 +359,20 @@ append content2
                     li Incorporation de nouveaux outils de débugage (Quantify et Purify)
                   hr
                   p: em Environnement technique :
-                  |  C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs), 
-                  |  C#, DotNet, XML, XSLT, HTML, CVS, DDK, SoftICE
+                  p C++ (VC7), Boost, STL, ACE, cygwin (make, bash, sed, awk, cvs), 
+                  p C#, DotNet, XML, XSLT, HTML, CVS, DDK, SoftICE
 
+              // -----------------------------------------------------------------------------------
               tr#visualmed
                 td
                   p.time-duration= dateHelpers.dateHelper2([2002, 04], [2003, 04])
                   h3.company-name VisualMED
+                  p: span.company-business Éditeur logicel de gestion des soins de santé et médicaments (contre-indications)
                   p
                     span.icon-map-marker.icon-large
                     span.location  Montréal, QC
                   p: span.title Ingénieur Étude et développement C/C++
                 td
-                  p Études et développement d’un logiciel de gestion des soins et médicaments (contre-indication)
                   ul
                     li Gestion des procédures de construction (configuration et déploiement)
                     li Tests d’intégration et régression
@@ -344,20 +380,20 @@ append content2
                     li Support au développement
                   hr
                   p: em Environnement technique :
-                  |  Delphi v6 + VCL, C/C++ (VC7), COM+, Oracle + Toad, Wise, Express QuantumGrid
+                  p Delphi v6 + VCL, C/C++ (VC7), COM+, Oracle + Toad, Wise, Express QuantumGrid
 
+              // -----------------------------------------------------------------------------------
               tr#rational
                 td
                   p.time-duration= dateHelpers.dateHelper2([2000, 08], [2001, 07])
-                  h3.company-name
-                    a(href="http://www.ibm.com/software/products/us/en/ratirosefami") Rational Software 
+                  h3.company-name: a(href="http://www.ibm.com/software/products/us/en/ratirosefami") Rational Software 
                   p (Rose Business Unit)
+                  p: span.company-business Éditeur d’outils visuels de conception logicielle (UML)
                   p
                     span.icon-map-marker.icon-large
                     span.location  Redmond, WA (USA)
                   p: span.title Ingénieur Étude et développement
                 td
-                  p Études et développement d’outils visuels de conception logicielle (UML)
                   ul
                     li Optimisation des scripts du build et des tests d’intégration
                     li Analyses de performance
@@ -366,9 +402,10 @@ append content2
                     li Documentation technique (APIs internes)
                   hr
                   p: em Environnement technique :
-                  |  Rose, UML, XDE, ClearCase, ClearQuest,
+                  p Rose, UML, XDE, ClearCase, ClearQuest,
                   p MSDev 6, Visual Studio 7, VB, COM (MIDL), Perl (ActiveState), Websphere Studio, Visual J++, Jbuilder, JSDK, JIntegra, cygwin
 
+              // -----------------------------------------------------------------------------------
               tr#microsoft
                 td
                   p.time-duration= dateHelpers.dateHelper2([1999, 07], [2000, 07])
@@ -384,8 +421,11 @@ append content2
                     li PSS : Support aux développeurs Kernel/Base (catégories d’interfaces Win32)
                   hr
                   p: em Environnement technique :
-                  |  VC6, Windbg, cdb, ntsd, kd, Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking), VC6, Win32, Platform SDK
+                  p debug: VC6, Windbg (cdb, ntsd, kd), Boundschecker, Bugtrapper, IDA (Interactive Disassembler), Detours, API hooking (IAT thunking)
+                  p VC6, VC7, Win32, Platform SDK
+                  p RAID (gestion d'anomalies), SourceDepot (contrôle des codes-source), usine de développement
 
+              // -----------------------------------------------------------------------------------
               tr#srtelecom
                 td
                   p.time-duration= dateHelpers.dateHelper2([1997, 03], [1999, 06])
@@ -399,13 +439,15 @@ append content2
                     li Conception d’une plateforme de télécommunications
                     li Conception et réalisation d’un système de gestion de réseaux en C++
                     li Optimisation du serveur de communications
-                    li Amélioration du sous-système de communication du SR-500 (doté d'un système d’exploitation embarqué et propriétaire)
+                    li Amélioration du sous-système de communication du SR-500 (doté d'un OS embarqué et propriétaire)
                     li Développement d’un panneau de contrôle en C++/MFC
                     li Réalisation des tests du client (sous-système de distribution)
                   hr
                   p: em Environnement technique :
-                  |  Visual C++, Win32, MFC, STL, Corba, ACE, OOP, design patterns, Borland C++, Checkmate ICE, UART, TMN, JIDM
+                  p Visual C++, Win32, MFC, STL, Corba, ACE, OOP, design patterns, TMN, JIDM
+                  p Embarqué: Borland C++, Checkmate ICE, Microchip PIC, UART
 
+              // -----------------------------------------------------------------------------------
               tr#lansertech
                 td
                   p.time-duration= dateHelpers.dateHelper2([1996, 07], [1997, 02])
@@ -418,8 +460,9 @@ append content2
                   p Optimisation d’un logiciel de conversion de protocoles de gestion de réseaux de communication (passerelle logicielle, proxy agent)
                   hr
                   p: em Environnement technique :
-                  |  C/C++, Sun/Solaris, Sparcworks, Sun Net Manager
+                  p C/C++, Sun/Solaris, Sparcworks, Sun Net Manager
 
+              // -----------------------------------------------------------------------------------
               tr#nbstech
                 td
                   p.time-duration= dateHelpers.dateHelper2([1993, 11], [1996, 07])
@@ -439,8 +482,9 @@ append content2
                     li Transfert du système d’exploitation et des applications
                   hr
                   p: em Environnement technique :
-                  |  C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
+                  p C/C++, asm 68K, MC68302, outils Microtec, XRAY, asm 80x86, MFC
 
+              // -----------------------------------------------------------------------------------
               tr#ste-justine
                 td
                   p.time-duration Stage d'été, 1992 <br/> (4 mois)
@@ -455,7 +499,7 @@ append content2
                   p Conception, réalisation et optimisation d’un programme de visualisation 3-D de la colonne vertébrale en mouvement
                   hr
                   p: em Environnement technique :
-                  |  C, Xlib, SUN, XWindows
+                  p C, Xlib, postes Sun, XWindows
 
   .row
     .col-md-6
